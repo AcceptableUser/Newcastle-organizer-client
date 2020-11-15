@@ -1,10 +1,13 @@
+@import '../../styles/scss/abstract/variables';
+@import '../../styles/scss/abstract/mixins';
+
 section {
-  background-color: var(--clear__color);
+  background-color: getColor(clearColor);
   height: 100vh;
   width: 100%;
   padding: 0 50px;
   margin: auto;
-  color: var(--dark__color);
+  color: getColor(darkColor);
   div {
     padding: 25px 0;
     div {
@@ -21,12 +24,12 @@ section {
         input {
           border: none;
           padding: 0;
-          color: var(--secondary__color);
+          color: getColor(secondaryColor);
           cursor: pointer;
         }
 
         input:hover {
-          border-bottom: 1px solid var(--secondary__color);
+          border-bottom: 1px solid getColor(secondaryColor);
         }
       }
     }
@@ -41,15 +44,15 @@ section {
       input {
         margin-bottom: 20px;
         border: none;
-        border-bottom: 1px solid var(--dark__color);
+        border-bottom: 1px solid getColor(darkColor);
         height: 40px;
         width: 100%;
       }
 
       .log__button {
         border: none;
-        background-color: var(--secondary__color);
-        color: var(--clear__color);
+        background-color: getColor(secondaryColor);
+        color: getColor(clearColor);
         margin-bottom: 30px;
         font-size: 16px;
         font-weight: 600;
@@ -75,7 +78,7 @@ section {
 
     .log__button__facebook {
       border: none;
-      background-color: var(--facebook__color);
+      background-color: getColor(facebookColor);
       color: var(--clear__color);
     }
 

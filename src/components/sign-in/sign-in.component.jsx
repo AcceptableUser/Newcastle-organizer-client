@@ -1,5 +1,9 @@
 import React from "react"
 import "./sign-in.styles.scss"
+import Button from "../html/button/primary"
+import GoogleButton from "../html/button/google"
+import FacebookButton from "../html/button/facebook"
+import Input from "../html/form/input"
 
 export const SignIn = ({changeLoginState}) => (
   <section>
@@ -10,15 +14,15 @@ export const SignIn = ({changeLoginState}) => (
       </div>
       <form action="">
         <label htmlFor="username">Username</label>
-        <input type="text" name="username" id="username" />
+        <Input type="text" name="username" id="username" />
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <Input type="email" name="email" id="email" />
         <label htmlFor="password">Password</label>
-        <input type="password"  name="password" id="password"/>
-        <input className="log__button button__font" type="button" value="Create account" />
+        <Input type="password"  name="password" id="password"/>
+        <Button />
       </form>
-      <input className="log__button__google button__font" type="button" value="Create account with Google"/>
-      <input className="log__button__facebook button__font" type="button" value="Create account with Facebook"/>
+      <GoogleButton />
+      <FacebookButton />
     </div>
   </section>
 )
