@@ -1,0 +1,94 @@
+section {
+  background-color: var(--clear__color);
+  height: 100vh;
+  width: 100%;
+  padding: 0 50px;
+  margin: auto;
+  color: var(--dark__color);
+  div {
+    padding: 25px 0;
+    div {
+      h1 {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 30px;
+
+        input {
+          border: none;
+          padding: 0;
+          color: var(--secondary__color);
+          cursor: pointer;
+        }
+
+        input:hover {
+          border-bottom: 1px solid var(--secondary__color);
+        }
+      }
+    }
+
+    form {
+      box-sizing: border-box;
+
+      label {
+        font-size: 14px;
+      }
+
+      input {
+        margin-bottom: 20px;
+        border: none;
+        border-bottom: 1px solid var(--dark__color);
+        height: 40px;
+        width: 100%;
+      }
+
+      .log__button {
+        border: none;
+        background-color: var(--secondary__color);
+        color: var(--clear__color);
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+
+    .log__button__google,
+    .log__button__facebook {
+      height: 40px;
+      width: 100%;
+      border-radius: 0;
+      margin: 10px 0;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 5px;
+    }
+
+    .log__button__google {
+      border: 1px solid #d3d3d3;
+    }
+
+    .log__button__facebook {
+      border: none;
+      background-color: var(--facebook__color);
+      color: var(--clear__color);
+    }
+
+    .button__font {
+      font-family: "Roboto", sans-serif;
+    }
+  }
+}
+
+@media only screen and (min-width: 766px) {
+  section {
+    max-width: 400px;
+    height: max-content;
+    border-radius: 5px;
+  }
+}
