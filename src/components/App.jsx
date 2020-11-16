@@ -1,36 +1,22 @@
 import React from "react"
 import './App.scss';
-import { LogIn } from "./log-in/log-in.component"
-import { SignIn } from "./sign-in/sign-in.component"
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import LoginPage from '../pages/LoginPage';
+import SignupPage from '../pages/SignupPage';
+import UserPage from '../pages/UserPage';
 
-class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      isLogginActive: true
-    }
-  }
-
-  changeLoginState = () => {
-    const { isLogginActive } = this.state
-    if (isLogginActive) {
-      this.setState({isLogginActive: false})
-    } else {
-      this.setState({isLogginActive: true})
-    }
-  }
-
-  render() {
-    const {isLogginActive} = this.state
+function App() {
     return (
       <div className="App">
-        <main>
-          {isLogginActive && <LogIn changeLoginState={this.changeLoginState} />}
-          {!isLogginActive && <SignIn changeLoginState={this.changeLoginState}/>}
-        </main>
+          <Router>
+            <Switch>
+              <Route path="/login" exact component={LoginPage}/>
+              <Route path="/signup" exact component={SignupPage}/>
+              <Route path="/user" exact component={UserPage}/>
+            </Switch>
+          </Router>
       </div>
     );
   }
-}
 
 export default App;

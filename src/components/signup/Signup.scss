@@ -51,7 +51,7 @@ section {
 
       .log__button {
         border: none;
-        background-color: getColor(secondaryColor);
+        background-color: getColor(primaryColor);
         color: getColor(clearColor);
         margin-bottom: 30px;
         font-size: 16px;
@@ -79,7 +79,7 @@ section {
     .log__button__facebook {
       border: none;
       background-color: getColor(facebookColor);
-      color: var(--clear__color);
+      color: getColor(clearColor);
     }
 
     .button__font {
