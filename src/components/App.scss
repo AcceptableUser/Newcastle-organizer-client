@@ -1,18 +1,17 @@
+@import '../styles/scss/abstract/variables';
+@import '../styles/scss/abstract/mixins';
+
 .App {
   font-family: "Roboto", sans-serif;
-  --dark__color: rgb(68, 68, 68);
-  --clear__color: #fff;
-  --primary__color: #051540;
-  --secondary__color: #2753ff;
-  --facebook__color: #3b5998;
+}
 
-  main {
-    background-image: url(../assets/images/pexels-riccardo-bertolo-4245826.jpg);
-    background-position: bottom;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+main {
+  //background-image: url(../assets/images/pexels-riccardo-bertolo-4245826.jpg);
+  background-color: getColor(primaryColor);
+  background-position: bottom;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

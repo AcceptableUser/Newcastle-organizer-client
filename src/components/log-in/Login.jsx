@@ -1,16 +1,17 @@
 import React from "react"
-import "./log-in.styles.scss"
+import "./Login.scss"
 import Button from "../html/button/primary"
 import GoogleButton from "../html/button/google"
 import FacebookButton from "../html/button/facebook"
 import Input from "../html/form/input"
+import {Link} from "react-router-dom"
 
-export const LogIn = ({changeLoginState}) => (
+const LogIn = () => (
   <section>
     <div>
       <div>
         <h1>Log in</h1>
-        <p>New user? <input type="button" value="Create an account" onClick={changeLoginState}/></p>
+        <p>New user? <Link to="/signup">Create an account</Link></p>
       </div>
       <form action="">
         <label htmlFor="email">Email</label>
@@ -24,3 +25,5 @@ export const LogIn = ({changeLoginState}) => (
     </div>
   </section>
 )
+
+export default LogIn;
