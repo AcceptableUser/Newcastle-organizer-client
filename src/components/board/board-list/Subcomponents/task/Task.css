@@ -1,0 +1,37 @@
+.task__wrapper {
+  padding: 2px;
+  height: 28px;
+  border-radius: 3px;
+  background-color: #fff;
+  border-bottom: 1px solid #bebdbd;
+  margin: 0 5px 7px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.task__wrapper p {
+  font-size: 14px;
+  width: 90%;
+  margin: auto 5px;
+}
+
+.task__wrapper button {
+  width: 10%;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.task__wrapper button:hover {
+  background-color: #cccccc;
+}
+
+.task__wrapper:hover {
+  background-color: whitesmoke;
+}
+/*# sourceMappingURL=Task.css.map */

@@ -1,0 +1,11 @@
+.list {
+  width: 270px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ebecf0;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+}
+/*# sourceMappingURL=BoardList.css.map */

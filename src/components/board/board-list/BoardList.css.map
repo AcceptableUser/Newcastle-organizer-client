@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,WAAW;EACnB,gBAAgB,ECCA,OAAO;EDAvB,OAAO,EAAE,GAAG;EACZ,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "BoardList.scss",
+        "../../../styles/scss/abstract/_variables.scss",
+        "../../../styles/scss/abstract/_mixins.scss"
+    ],
+    "names": [],
+    "file": "BoardList.css"
+}

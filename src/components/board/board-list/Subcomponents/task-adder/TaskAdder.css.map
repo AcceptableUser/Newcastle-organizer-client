@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,oBAAoB,CAAC;EACnB,MAAM,EAAE,KAAK;CA2Bd;;AA5BD,AAEE,oBAFkB,CAElB,KAAK,CAAC;EACJ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,WAAW;EAC7B,UAAU,EAAE,IAAI;EAChB,YAAY,EAAE,IAAI;EAClB,MAAM,EAAE,OAAO;EACf,aAAa,EAAE,GAAG;EAClB,KAAK,EAAE,OAAkB;CAC1B;;AAXH,AAaE,oBAbkB,CAalB,KAAK,AAAA,MAAM,CAAC;EACV,gBAAgB,EAAE,OAAkB;CACrC;;AAfH,AAiBE,oBAjBkB,CAiBlB,MAAM,CAAC;EACL,MAAM,EAAE,OAAO;EACf,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,WAAW;EAC7B,aAAa,EAAE,GAAG;CACnB;;AAvBH,AAyBE,oBAzBkB,CAyBlB,MAAM,AAAA,MAAM,CAAC;EACX,gBAAgB,EAAE,OAAkB;CACrC",
+    "sources": [
+        "TaskAdder.scss",
+        "../../../../../styles/scss/abstract/_variables.scss",
+        "../../../../../styles/scss/abstract/_mixins.scss"
+    ],
+    "names": [],
+    "file": "TaskAdder.css"
+}

@@ -1,0 +1,11 @@
+@import "../../../styles/scss/abstract/variables";
+@import "../../../styles/scss/abstract/mixins";
+
+.list {
+  width: 270px;
+  height: max-content;
+  background-color: getColor(listBackground);
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+}
