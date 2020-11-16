@@ -1,0 +1,6 @@
+@import "../../styles/scss/abstract/variables";
+@import "../../styles/scss/abstract/mixins";
+
+section {
+  background-color: getColor(thirdColor);
+}
