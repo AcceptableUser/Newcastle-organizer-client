@@ -1,0 +1,15 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.Board__wrapper {
+  background-color: #4bbf6b;
+  width: 100%;
+  height: 100vh;
+}
+
+.Board__wrapper .title__wrapper .title {
+  text-align: center;
+  color: #fff;
+}
+/*# sourceMappingURL=Board.css.map */

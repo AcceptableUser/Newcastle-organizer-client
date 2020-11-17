@@ -1,0 +1,40 @@
+@import "../../../../../styles/scss/abstract/variables";
+@import "../../../../../styles/scss/abstract/mixins";
+
+.title__list__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+
+  textarea {
+    width: 87%;
+    height: 20px;
+    resize: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+
+  button {
+    height: 30px;
+    width: 13%;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 3px;
+    color: rgb(110, 110, 110);
+
+    div {
+      width: 13px;
+      height: 13px;
+      padding: 0 10px;
+    }
+  }
+
+  button:hover {
+    background-color: rgb(204, 204, 204);
+  }
+}

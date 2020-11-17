@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,CAAC,CAAC;EACA,WAAW,EAAE,oBAAoB;CAClC;;AAED,AAAA,eAAe,CAAC;EACd,gBAAgB,ECHJ,OAAO;EDInB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;CAQd;;AAXD,AAMI,eANW,CAKb,eAAe,CACb,MAAM,CAAC;EACL,UAAU,EAAE,MAAM;EAClB,KAAK,ECbG,IAAI;CDcb",
+    "sources": [
+        "Board.scss",
+        "../../styles/scss/abstract/_variables.scss",
+        "../../styles/scss/abstract/_mixins.scss"
+    ],
+    "names": [],
+    "file": "Board.css"
+}

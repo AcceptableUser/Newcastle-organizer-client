@@ -1,0 +1,18 @@
+@import "../../../styles/scss/abstract/variables";
+@import "../../../styles/scss/abstract/mixins";
+
+.list__wrapper {
+  display: flex;
+  justify-content: left;
+  overflow-x: hidden;
+
+  .list {
+    min-width: 270px;
+    display: block;
+    height: max-content;
+    background-color: getColor(listBackground);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0 10px 10px;
+  }
+}

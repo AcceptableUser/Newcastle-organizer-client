@@ -1,0 +1,34 @@
+@import "../../../../../styles/scss/abstract/variables";
+@import "../../../../../styles/scss/abstract/mixins";
+
+.task-adder__wrapper {
+  margin: 0 6px;
+  input {
+    width: 87%;
+    height: 30px;
+    background-color: transparent;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: rgb(110, 110, 110);
+  }
+
+  input:hover {
+    background-color: rgb(219, 219, 219);
+  }
+
+  button {
+    cursor: pointer;
+    width: 13%;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 3px;
+    color: rgb(110, 110, 110);
+    padding: 10px;
+  }
+
+  button:hover {
+    background-color: rgb(204, 204, 204);
+  }
+}
