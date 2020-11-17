@@ -1,9 +1,13 @@
 import React from "react"
 import "./Task.scss"
 
-const Task = () => (
-  <div className="task__wrapper">
-    <p>List</p>
+const Task = ({item, handleDragStart, activeClass, handleDragOverItem}) => (
+  <div
+    draggable
+    onDragStart={handleDragStart}
+    onDragEnter={handleDragOverItem}
+    className={activeClass}>
+    <p>{item}</p>
     <button>
       B
     </button>
