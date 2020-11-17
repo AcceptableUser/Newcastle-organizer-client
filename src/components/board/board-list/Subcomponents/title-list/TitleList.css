@@ -13,7 +13,7 @@
 }
 
 .title__list__wrapper textarea {
-  width: 90%;
+  width: 87%;
   height: 20px;
   resize: none;
   background-color: transparent;
@@ -25,10 +25,11 @@
 
 .title__list__wrapper button {
   height: 30px;
-  width: 10%;
+  width: 13%;
   background-color: transparent;
   cursor: pointer;
   border-radius: 3px;
+  color: #6e6e6e;
 }
 
 .title__list__wrapper button img {

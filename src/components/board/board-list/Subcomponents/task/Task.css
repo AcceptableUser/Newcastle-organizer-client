@@ -16,12 +16,12 @@
 
 .task__wrapper p {
   font-size: 14px;
-  width: 90%;
+  width: 87%;
   margin: auto 5px;
 }
 
 .task__wrapper button {
-  width: 10%;
+  width: 13%;
   cursor: pointer;
   background-color: transparent;
   border-radius: 3px;

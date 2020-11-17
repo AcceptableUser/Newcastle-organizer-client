@@ -4,13 +4,13 @@
 .task-adder__wrapper {
   margin: 0 6px;
   input {
-    width: 90%;
+    width: 87%;
     height: 30px;
     background-color: transparent;
     text-align: left;
     padding-left: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 3px;
     color: rgb(110, 110, 110);
   }
 
@@ -20,10 +20,11 @@
 
   button {
     cursor: pointer;
-    width: 10%;
+    width: 13%;
     height: 30px;
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 3px;
+    color: rgb(110, 110, 110);
   }
 
   button:hover {
