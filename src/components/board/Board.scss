@@ -1,6 +1,10 @@
 @import "../../styles/scss/abstract/variables";
 @import "../../styles/scss/abstract/mixins";
 
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 .Board__wrapper {
   background-color: getColor(thirdColor);
   width: 100%;

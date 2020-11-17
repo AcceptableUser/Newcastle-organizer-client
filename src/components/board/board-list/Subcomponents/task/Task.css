@@ -14,10 +14,15 @@
           justify-content: space-between;
 }
 
-.task__wrapper p {
-  font-size: 14px;
+.task__wrapper textarea {
   width: 87%;
-  margin: auto 5px;
+  height: 20px;
+  resize: none;
+  background-color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  margin: auto;
+  padding: 3px 8px 0;
 }
 
 .task__wrapper button {
@@ -25,6 +30,12 @@
   cursor: pointer;
   background-color: transparent;
   border-radius: 3px;
+  padding: 0 10px;
+}
+
+.task__wrapper button div {
+  width: 13px;
+  height: 13px;
 }
 
 .task__wrapper button:hover {
@@ -51,11 +62,16 @@
           justify-content: space-between;
 }
 
-.task__wrapper--active p {
-  font-size: 14px;
+.task__wrapper--active textarea {
   width: 87%;
-  margin: auto 5px;
+  height: 20px;
+  resize: none;
+  background-color: transparent;
   color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  margin: auto;
+  padding: 3px 8px 0;
 }
 
 .task__wrapper--active button {
@@ -64,6 +80,12 @@
   background-color: transparent;
   border-radius: 3px;
   color: transparent;
+}
+
+.task__wrapper--active button div {
+  width: 16px;
+  height: 16px;
+  display: none;
 }
 
 .task__wrapper--active button:hover {

@@ -1,15 +1,18 @@
 import React from "react"
+import Marker from "../../../../html/SVG/Marker"
 import "./Task.scss"
 
 const Task = ({item, handleDragStart, activeClass, handleDragOverItem}) => (
   <div
-    draggable
+    draggable="true"
     onDragStart={handleDragStart}
     onDragEnter={handleDragOverItem}
     className={activeClass}>
-    <p>{item}</p>
+    <textarea>{item}</textarea>
     <button>
-      B
+      <div>
+        <Marker className="marker"/>
+      </div>
     </button>
   </div>
 )

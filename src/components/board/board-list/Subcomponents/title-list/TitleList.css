@@ -32,8 +32,10 @@
   color: #6e6e6e;
 }
 
-.title__list__wrapper button img {
-  width: 100%;
+.title__list__wrapper button div {
+  width: 13px;
+  height: 13px;
+  padding: 0 10px;
 }
 
 .title__list__wrapper button:hover {

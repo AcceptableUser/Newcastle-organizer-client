@@ -12,10 +12,15 @@
   display: flex;
   justify-content: space-between;
 
-  p {
-    font-size: 14px;
+  textarea {
     width: 87%;
-    margin: auto 5px;
+    height: 20px;
+    resize: none;
+    background-color: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    margin: auto;
+    padding: 3px 8px 0;
   }
 
   button {
@@ -23,6 +28,12 @@
     cursor: pointer;
     background-color: transparent;
     border-radius: 3px;
+    padding: 0 10px;
+
+    div {
+      width: 13px;
+      height: 13px;
+    }
   }
 
   button:hover {
@@ -45,11 +56,16 @@
   display: flex;
   justify-content: space-between;
 
-  p {
-    font-size: 14px;
+  textarea {
     width: 87%;
-    margin: auto 5px;
+    height: 20px;
+    resize: none;
+    background-color: transparent;
     color: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    margin: auto;
+    padding: 3px 8px 0;
   }
 
   button {
@@ -58,6 +74,12 @@
     background-color: transparent;
     border-radius: 3px;
     color: transparent;
+
+    div {
+      width: 16px;
+      height: 16px;
+      display: none;
+    }
   }
 
   button:hover {

@@ -6,12 +6,16 @@ import TitleList from "./Subcomponents/title-list/TitleList"
 
 const data = [
   {
-    title: "group 1",
-    items: ["List 1", "List 2", "List 3", "List 4", "List 5"]
+    title: "Group 1",
+    items: ["There is still"]
   },
   {
-    title: "group 2",
-    items: ["List 6", "List 7", "List 8", "List 9"]
+    title: "Group 2",
+    items: ["work to do! :)"]
+  },
+  {
+    title: "Group 3",
+    items: ["But I will continue", "tomorrow"]
   }
 ]
 
@@ -49,15 +53,28 @@ const BoardList = () => {
   const handleDragOverItem = (e, params) => {
     const currentItem = dragItem.current
     if (currentItem.groupIndex !== params.groupIndex || currentItem.itemIndex !== params.itemIndex) {
-      console.log("NOT THE SAME", params)
+      setList(oldList => {
+        let newList = JSON.parse(JSON.stringify(oldList))
+        newList[params.groupIndex]
+          .items.splice(params.itemIndex, 0, newList[currentItem.groupIndex]
+          .items.splice(currentItem.itemIndex, 1)[0])
+        dragItem.current = params
+        return newList
+      })
     }
   }
 
   return (
     <div className="list__wrapper">
     {list.map((group, groupIndex) => (
-      <div key={group.title} className="list">
-        <TitleList />
+      <div
+        key={group.title}
+        className="list"
+        onDragEnter={
+          dragging && group.items.length === 0 ? (e) => { handleDragOverItem(e, {groupIndex, itemIndex: 0}) }:null
+        }
+      >
+        <TitleList title={group.title}/>
           {group.items.map((item, itemIndex) => (
             <Task
               key={item}

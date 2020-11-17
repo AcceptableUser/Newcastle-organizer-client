@@ -24,6 +24,7 @@
   background-color: transparent;
   border-radius: 3px;
   color: #6e6e6e;
+  padding: 10px;
 }
 
 .task-adder__wrapper button:hover {
