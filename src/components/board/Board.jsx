@@ -13,9 +13,6 @@ class Board extends Component {
   render() {
     return (
       <div className="Board__wrapper">
-        <div className="title__wrapper">
-          <h1 className="title">Title</h1>
-        </div>
         <div>
           <BoardList />
         </div>

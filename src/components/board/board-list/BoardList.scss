@@ -5,14 +5,13 @@
   display: flex;
   justify-content: left;
   overflow-x: hidden;
+  background-color: #f9fbfd;
 
   .list {
-    min-width: 270px;
+    min-width: 310px;
     display: block;
     height: max-content;
-    background-color: getColor(listBackground);
-    padding: 5px;
-    border-radius: 5px;
-    margin: 10px 0 10px 10px;
+    margin: 10px 0;
+    border-top: 1px solid #ced4de;
   }
 }

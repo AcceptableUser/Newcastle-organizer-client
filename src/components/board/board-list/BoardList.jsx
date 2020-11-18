@@ -6,16 +6,24 @@ import TitleList from "./Subcomponents/title-list/TitleList"
 
 const data = [
   {
-    title: "Group 1",
-    items: ["There is still"]
+    title: "To do",
+    items: ["Code migration and merge", "JS Hint implementation"]
   },
   {
-    title: "Group 2",
-    items: ["work to do! :)"]
+    title: "In progress",
+    items: ["Request Costum feedback", "CDD refactoring", "Dashboard improvements"]
   },
   {
-    title: "Group 3",
-    items: ["But I will continue", "tomorrow"]
+    title: "Pending",
+    items: ["Request custom feedback"]
+  },
+  {
+    title: "Review",
+    items: ["Email Newsletter", "Templates translation"]
+  },
+  {
+    title: "Finished",
+    items: ["Code migration and merge"]
   }
 ]
 

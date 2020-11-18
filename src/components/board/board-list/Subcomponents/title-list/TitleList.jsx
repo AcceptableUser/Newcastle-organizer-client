@@ -1,15 +1,11 @@
 import React from "react"
-import Menu from "../../../../html/SVG/Menu"
 import "./TitleList.scss"
 
-const TitleList = ({title}) => (
+const TitleList = ({ title }) => (
   <div className="title__list__wrapper">
-    <textarea>{title}</textarea>
-    <button>
-      <div>
-        <Menu />
-      </div>
-    </button>
+    <div className="title__list">
+    <h2>{title}</h2>
+    </div>
   </div>
 )
 
