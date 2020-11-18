@@ -10,11 +10,60 @@
   background-color: getColor(clearColor);
   width: 100%;
   height: 100vh;
+  background-color: #fdfdfd;
 
-  .title__wrapper {
-    .title {
-      text-align: center;
-      color: getColor(clearColor);
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+
+    .project__title {
+      margin: 0 auto auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 97.9%;
+
+      h1 {
+        margin: auto 0;
+      }
+      .project__users {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          border-radius: 50%;
+          margin-left: 3px;
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 97.9%;
+      border-bottom: 1px solid #ced4de;
+
+      ul {
+        display: flex;
+
+        li {
+          margin: 0 30px 20px 0;
+        }
+      }
+
+      .options {
+        display: flex;
+
+        .option__button {
+          margin: 0 0 20px 30px;
+        }
+      }
     }
   }
 }
