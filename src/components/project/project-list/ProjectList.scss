@@ -1,0 +1,13 @@
+.project-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 0.5rem;
+  grid-column-gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .project-list{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
