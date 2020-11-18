@@ -1,3 +1,5 @@
+@import "./variables";
+
 @function getColor($colorSelected) {
     @return map-get($map: $color, $key: $colorSelected)
 }
