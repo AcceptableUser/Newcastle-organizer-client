@@ -15,11 +15,11 @@
   justify-content: space-between;
   flex-direction: column;
 
-  .title__wrapper {
+  .task__title__wrapper {
     display: flex;
     justify-content: space-between;
 
-    h3 {
+    .task__title {
       width: 100%;
       height: 18px;
       resize: none;
@@ -30,7 +30,7 @@
       margin: auto;
     }
 
-    .button__wrapper {
+    .task__options__button__wrapper {
       width: 30px;
       height: 28px;
       box-sizing: border-box;
@@ -39,19 +39,19 @@
       cursor: pointer;
     }
 
-    .button__wrapper:hover {
+    .task__options__button__wrapper:hover {
       background-color: #edf3fa;
     }
   }
 
-  .buttons__wrapper {
+  .task__information__wrapper {
     width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 4px;
 
-    .button__wrapper {
+    .task__information {
       width: max-content;
       display: flex;
       justify-content: center;
@@ -61,7 +61,7 @@
       margin-right: 6px;
       padding: 2px;
 
-      p {
+      .task__information__details {
         font-size: 12px;
         padding-left: 2px;
         color: #777879;
@@ -69,11 +69,11 @@
     }
   }
 
-  .footer__wrapper {
+  .task__footer__wrapper {
     display: flex;
     justify-content: space-between;
 
-    .label {
+    .task__footer__label {
       font-size: 12px;
       padding: 3px 8px;
       background-color: #d5ddf9;
@@ -82,8 +82,8 @@
       margin: 4px 0;
     }
 
-    .people {
-      img {
+    .task__footer__image__wrapper {
+      .task__footer__image {
         border-radius: 50%;
         margin-left: 3px;
         width: 26px;

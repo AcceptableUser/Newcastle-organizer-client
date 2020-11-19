@@ -7,46 +7,55 @@ const FloatingTaskMenu = () => {
   return (
     <div className="floating-menu__background">
       <div className="floating-menu__container">
-        <div className="floating-menu__section">
-          <div className="title__container">
-            <textarea rows="1" className="title">
+        <section className="floating-menu__section">
+          <div className="floating-menu__section__title__wrapper">
+            <textarea rows="1" className="floating-menu__section__title">
               Task title
             </textarea>
-            <div className="close">
+            <div className="floating-menu__section__close-button__wrapper">
               <Close />
             </div>
           </div>
-        </div>
-        <div className="task-extras__wrapper">
-          <div className="task-extras__interaction">
-            <div className="floating-menu__section">
-              <h3>Description</h3>
+        </section>
+        <div className="floating-menu__extras">
+          <div className="floating-menu__interactions__wrapper">
+            <section className="floating-menu__section">
+              <h3 className="floating-menu__section__sub-title">Description</h3>
               <textarea
-                rows="4"
+                className="floating-menu__section__description"
+                rows="2"
                 placeholder="Add a more detailed description..."
               ></textarea>
-            </div>
-            <div className="floating-menu__section">
-              <h3>Comments</h3>
-              <div className="comment-input">
-                <img src={profile} width="38px" height="38px" alt="user" />
+            </section>
+            <section className="floating-menu__section">
+              <h3 className="floating-menu__section__sub-title">Comments</h3>
+              <div className="floating-menu__section__comment__wrapper">
+                <img
+                  className="floating-menu__section__comment__image"
+                  src={profile}
+                  alt="user"
+                />
                 <input
+                  className="floating-menu__section__comment__input"
                   type="text"
                   name=""
                   id=""
-                  placeholder="Write a comment"
+                  placeholder="Write a comment..."
                 />
               </div>
-            </div>
+            </section>
           </div>
-          <div className="task-extras__features">
-            <h4>Add to card</h4>
-            <ul>
-              <li>Members</li>
-              <li>Labels</li>
-              <li>Due date</li>
+          <aside className="floating-menu__add-ons">
+            <h4 className="floating-menu__add-ons__title">Add to task</h4>
+            <ul className="floating-menu__add-ons__list">
+              <li className="floating-menu__add-ons__list__item">Members</li>
+              <li className="floating-menu__add-ons__list__item">Labels</li>
+              <li className="floating-menu__add-ons__list__item">Checklist</li>
+              <li className="floating-menu__add-ons__list__item">Due date</li>
+              <li className="floating-menu__add-ons__list__item">Attachment</li>
+              <li className="floating-menu__add-ons__list__item">Cover</li>
             </ul>
-          </div>
+          </aside>
         </div>
       </div>
     </div>

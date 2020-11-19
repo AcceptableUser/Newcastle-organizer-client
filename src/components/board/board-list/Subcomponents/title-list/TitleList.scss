@@ -24,14 +24,17 @@
     cursor: pointer;
     height: 25px;
 
-    .title__list__h2 {
-      background-color: transparent;
+    .title__list__textarea {
       font-size: 14px;
       font-weight: 500;
-    }
-
-    .title__list__textarea {
-      display: none;
+      position: absolute;
+      resize: none;
+      height: 25px;
+      width: 90%;
+      border-radius: 3px;
+      text-align: center;
+      padding-top: 4px;
+      background-color: transparent;
     }
   }
 
@@ -47,12 +50,6 @@
     border-radius: 3px;
     cursor: pointer;
     height: 25px;
-
-    .title__list__h2 {
-      background-color: transparent;
-      font-size: 14px;
-      font-weight: 500;
-    }
 
     .title__list__textarea {
       font-size: 14px;

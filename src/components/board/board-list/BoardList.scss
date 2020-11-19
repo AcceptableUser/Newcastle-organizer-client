@@ -1,13 +1,13 @@
 @import "../../../styles/scss/abstract/variables";
 @import "../../../styles/scss/abstract/mixins";
 
-.list__wrapper {
+.board__list__wrapper {
   display: flex;
   justify-content: left;
   overflow-x: hidden;
   background-color: #f9fbfd;
 
-  .list {
+  .board__list {
     min-width: 310px;
     display: block;
     height: max-content;
