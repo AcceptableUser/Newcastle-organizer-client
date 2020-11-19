@@ -5,49 +5,49 @@
   align-items: center;
   height: 120px;
 
-  .project__title {
+  .header__title__wrapper {
     margin: 0 auto auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 97.9%;
 
-    h1 {
+    .header__title {
       margin: auto 0;
       font-weight: 500;
       font-size: 28px;
     }
 
-    p {
-      font-size: 16px;
-      padding: 3px 10px;
-      background-color: #d5ddf9;
-      font-weight: 500;
-      border-radius: 10px;
-      margin: 4px 0;
-      cursor: pointer;
-    }
+    // p {
+    //   font-size: 16px;
+    //   padding: 3px 10px;
+    //   background-color: #d5ddf9;
+    //   font-weight: 500;
+    //   border-radius: 10px;
+    //   margin: 4px 0;
+    //   cursor: pointer;
+    // }
   }
 
-  .nav {
+  .header__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 97.9%;
     border-bottom: 1px solid #ced4de;
 
-    ul {
+    .header__nav__list {
       display: flex;
 
-      li {
+      .header__nav__list__item {
         margin: 0 30px 20px 0;
       }
     }
 
-    .options {
+    .header__nav__options__wrapper {
       display: flex;
 
-      .option__button {
+      .header__nav__options__button__wrapper {
         margin: 0 0 20px 30px;
       }
     }

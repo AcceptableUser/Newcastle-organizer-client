@@ -2,7 +2,7 @@ import Login from '../components/log-in/Login';
 
 function LoginPage() {
   return (
-    <main>
+    <main className="main">
         <Login />
     </main>
   );

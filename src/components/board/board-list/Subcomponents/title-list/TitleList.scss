@@ -24,13 +24,13 @@
     cursor: pointer;
     height: 25px;
 
-    h2 {
+    .title__list__h2 {
       background-color: transparent;
       font-size: 14px;
       font-weight: 500;
     }
 
-    textarea {
+    .title__list__textarea {
       display: none;
     }
   }
@@ -48,13 +48,13 @@
     cursor: pointer;
     height: 25px;
 
-    h2 {
+    .title__list__h2 {
       background-color: transparent;
       font-size: 14px;
       font-weight: 500;
     }
 
-    textarea {
+    .title__list__textarea {
       font-size: 14px;
       font-weight: 500;
       position: absolute;
@@ -64,7 +64,7 @@
       border: 1px solid #6687ff;
       border-radius: 3px;
       text-align: center;
-      padding-top: 2px;
+      padding-top: 3px;
     }
   }
 }

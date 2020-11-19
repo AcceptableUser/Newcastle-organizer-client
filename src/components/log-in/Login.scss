@@ -1,23 +1,23 @@
 @import "../../styles/scss/abstract/variables";
 @import "../../styles/scss/abstract/mixins";
 
-section {
+.section__login {
   background-color: getColor(clearColor);
   height: 100vh;
   width: 100%;
   padding: 0 50px;
   margin: auto;
   color: getColor(darkColor);
-  div {
+  .section__login__content__wrapper {
     padding: 25px 0;
-    div {
-      h1 {
+    .section__login__title__wrapper {
+      .section__login__title {
         font-size: 36px;
         font-weight: 600;
         margin-bottom: 0;
       }
 
-      p {
+      .section__login__link {
         font-size: 14px;
         margin-bottom: 30px;
 
@@ -34,10 +34,10 @@ section {
       }
     }
 
-    form {
+    .section__login__form {
       box-sizing: border-box;
 
-      label {
+      .section__login__form__label {
         font-size: 14px;
       }
 
@@ -89,7 +89,7 @@ section {
 }
 
 @media only screen and (min-width: 766px) {
-  section {
+  .section__login {
     max-width: 400px;
     height: max-content;
     border-radius: 5px;

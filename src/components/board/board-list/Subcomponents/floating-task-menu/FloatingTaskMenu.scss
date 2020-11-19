@@ -1,0 +1,79 @@
+.floating-menu__background {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  .floating-menu__container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 5px;
+    background-color: #f4f5f7;
+    padding: 40px 50px;
+
+    .floating-menu__section {
+      margin-bottom: 50px;
+
+      textarea {
+        background-color: transparent;
+        border-radius: 5px;
+        resize: none;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(9, 30, 66, 0.08);
+      }
+
+      .title__container {
+        display: flex;
+        align-items: center;
+        .title {
+          padding: 3px 0;
+          font-size: 20px;
+          height: 32px;
+          font-weight: 600;
+          background-color: transparent;
+        }
+
+        .close {
+          margin: auto;
+          padding: 10px;
+          cursor: pointer;
+        }
+      }
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      .comment-input {
+        display: flex;
+        img {
+          border-radius: 50%;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+
+        input {
+          width: 100%;
+          border: 1px solid rgba(9, 30, 66, 0.25);
+          border-radius: 5px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .floating-menu__container {
+    max-width: 768px;
+    max-height: 800px;
+  }
+}

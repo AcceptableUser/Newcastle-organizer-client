@@ -7,16 +7,16 @@ import Input from "../html/form/input"
 import {Link} from "react-router-dom"
 
 const LogIn = () => (
-  <section>
-    <div>
-      <div>
-        <h1>Log in</h1>
-        <p>New user? <Link to="/signup">Create an account</Link></p>
+  <section className="section__login">
+    <div className="section__login__content__wrapper">
+      <div className="section__login__title__wrapper">
+        <h1 className="section__login__title">Log in</h1>
+        <p className="section__login__link">New user? <Link to="/signup">Create an account</Link></p>
       </div>
-      <form action="">
-        <label htmlFor="email">Email</label>
+      <form className="section__login__form" action="">
+        <label className="section__login__form__label" htmlFor="email">Email</label>
         <Input type="email" name="email" id="email" />
-        <label htmlFor="password">Password</label>
+        <label className="section__login__form__label" htmlFor="password">Password</label>
         <Input type="password"  name="password" id="password"/>
         <Button />
       </form>

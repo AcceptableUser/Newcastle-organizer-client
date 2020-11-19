@@ -5,7 +5,7 @@ import "./Board.scss"
 
 const Board = () => {
   return (
-    <div className="Board__wrapper">
+    <div className="board__wrapper">
       <div>
         <Header />
         <BoardList />

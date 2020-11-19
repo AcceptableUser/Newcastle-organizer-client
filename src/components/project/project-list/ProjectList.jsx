@@ -4,12 +4,11 @@ import Project from "../project/Project";
 
 export default function ProjectList() {
     return (
-        <div className={"project-list"}>
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-
-        </div>
+        <ul className="project__list">
+            <li><Project /></li>
+            <li><Project /></li>
+            <li><Project /></li>
+            <li><Project /></li>
+        </ul>
     )
 }
