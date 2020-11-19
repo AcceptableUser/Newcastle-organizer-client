@@ -6,12 +6,8 @@ import Menu from "../../../../html/SVG/Menu"
 import profile from "../../../../../assets/images/profile.png"
 import "./Task.scss"
 
-const Task = ({item, handleDragStart, activeClass, handleDragOverItem}) => (
-  <div
-    draggable="true"
-    onDragStart={handleDragStart}
-    onDragEnter={handleDragOverItem}
-    className={activeClass}>
+const Task = ({item, handleFloatingMenu}) => (
+  <div onClick={handleFloatingMenu} className="task__wrapper">
     <div>
       <div className="title__wrapper">
       <h3>{item}</h3>

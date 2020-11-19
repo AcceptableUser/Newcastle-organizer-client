@@ -1,100 +1,91 @@
-import React, {useState, useRef} from "react";
+import React, {useState} from "react";
 import "./BoardList.scss"
 import TaskAdder from "./Subcomponents/task-adder/TaskAdder"
 import Task from "./Subcomponents/task/Task"
 import TitleList from "./Subcomponents/title-list/TitleList"
 
-const data = [
-  {
-    title: "To do",
-    items: ["Code migration and merge", "JS Hint implementation"]
-  },
-  {
-    title: "In progress",
-    items: ["Request Costum feedback", "CDD refactoring", "Dashboard improvements"]
-  },
-  {
-    title: "Pending",
-    items: ["Request custom feedback"]
-  },
-  {
-    title: "Review",
-    items: ["Email Newsletter", "Templates translation"]
-  },
-  {
-    title: "Finished",
-    items: ["Code migration and merge"]
-  }
-]
-
 const BoardList = () => {
-  const [list, setList] = useState(data)
-  const [dragging, setDragging] = useState(false)
-
-  const dragItem = useRef()
-  const dragNode = useRef()
-
-  const handleDragStart = (e, params) => {
-    dragItem.current = params
-    dragNode.current = e.target
-    dragNode.current.addEventListener("dragend", handleDragEnd)
-    setTimeout(() => {
-      setDragging(true)
-    }, 0)
-  }
-
-  const handleDragEnd = () => {
-    setDragging(false)
-    dragNode.current.removeEventListener("dragend", handleDragEnd)
-    dragItem.current = null
-    dragNode.current = null
-  }
-
-  const changeItemStyle = (params) => {
-    const currentItem = dragItem.current
-    if (currentItem.groupIndex === params.groupIndex && currentItem.itemIndex === params.itemIndex) {
-      return "task__wrapper--active"
+  const [list, changeList] = useState([
+    {
+      id: "1",
+      title: "To do",
+      titleEditable: false,
+      items: ["Code migration and merge", "JS Hint implementation"]
+    },
+    {
+      id: "2",
+      title: "In progress",
+      titleEditable: false,
+      items: ["Request Costum feedback", "CDD refactoring", "Dashboard improvements"]
+    },
+    {
+      id: "3",
+      title: "Pending",
+      titleEditable: false,
+      items: ["Request custom feedback"]
+    },
+    {
+      id: "4",
+      title: "Review",
+      titleEditable: false,
+      items: ["Email Newsletter", "Templates translation"]
+    },
+    {
+      id: "5",
+      title: "Finished",
+      titleEditable: false,
+      items: ["Code migration and merge"]
     }
-    return "task__wrapper"
+  ])
+
+  const handleClick = (e, groupIndex) => {
+    let listCopy = [...list]
+    listCopy[groupIndex].titleEditable = true
+    changeList(listCopy)
   }
 
-  const handleDragOverItem = (e, params) => {
-    const currentItem = dragItem.current
-    if (currentItem.groupIndex !== params.groupIndex || currentItem.itemIndex !== params.itemIndex) {
-      setList(oldList => {
-        let newList = JSON.parse(JSON.stringify(oldList))
-        newList[params.groupIndex]
-          .items.splice(params.itemIndex, 0, newList[currentItem.groupIndex]
-          .items.splice(currentItem.itemIndex, 1)[0])
-        dragItem.current = params
-        return newList
-      })
+  const changeStyle = (groupIndex) => {
+    if (list[groupIndex].titleEditable) {
+      return "title__list--active"
+    } else {
+      return "title__list"
     }
+  }
+
+  const handleKeyPressed = (e, groupIndex) => {
+    if (e.key === "Enter") {
+      let listCopy = [...list]
+      listCopy[groupIndex].title = e.target.value
+      listCopy[groupIndex].titleEditable = false
+      changeList(listCopy)
+    }
+  }
+
+  const handleTaskCreation = (groupIndex) => {
+    let listCopy = [...list]
+    listCopy[groupIndex].items = [...listCopy[groupIndex].items, "New Task"]
+    changeList(listCopy)
+  }
+
+  const handleFloatingMenu = () => {
+    console.log("You have pressed the task!")
   }
 
   return (
     <div className="list__wrapper">
     {list.map((group, groupIndex) => (
-      <div
-        key={group.title}
-        className="list"
-        onDragEnter={
-          dragging && group.items.length === 0 ? (e) => { handleDragOverItem(e, {groupIndex, itemIndex: 0}) }:null
-        }
-      >
-        <TitleList title={group.title}/>
+      <div key={group.id} className="list" >
+        <TitleList key={group.title} title={group.title}
+          handleClick={e => handleClick(e, groupIndex)}
+          changeStyle={changeStyle(groupIndex)}
+          handleKeyPressed={e => handleKeyPressed(e, groupIndex)}
+        />
           {group.items.map((item, itemIndex) => (
-            <Task
-              key={item}
-              item={item}
-              handleDragStart={(e) => { handleDragStart(e, { groupIndex, itemIndex }) }}
-              handleDragOverItem={
-                dragging ? (e) => { handleDragOverItem(e, { groupIndex, itemIndex }) }:null
-              }
-              activeClass={dragging?changeItemStyle({groupIndex, itemIndex}):"task__wrapper"}
+            <Task key={item} item={item}
+              handleFloatingMenu={handleFloatingMenu}
             />
           ))}
-        <TaskAdder />
+        <TaskAdder handleTaskCreation={() => handleTaskCreation(groupIndex)} />
         </div>
       ))}
     </div>
