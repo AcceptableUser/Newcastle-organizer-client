@@ -4,8 +4,10 @@
 .board__list__wrapper {
   display: flex;
   justify-content: left;
-  overflow-x: hidden;
-  background-color: #f9fbfd;
+  width: 100%;
+  height: calc(100vh - 120px);
+  overflow: auto;
+  background-image: url("https://source.unsplash.com/random/1920x1080");
 
   .board__list {
     min-width: 310px;
@@ -13,4 +15,12 @@
     height: max-content;
     margin: 0 0 10px;
   }
+}
+
+.float-menu__unactive {
+  display: none;
+}
+
+.float-menu__active {
+  display: block;
 }

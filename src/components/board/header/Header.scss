@@ -4,6 +4,8 @@
   justify-content: space-between;
   align-items: center;
   height: 120px;
+  width: 100%;
+  background-color: #fff;
 
   .header__title__wrapper {
     margin: 0 auto auto;
@@ -16,17 +18,8 @@
       margin: auto 0;
       font-weight: 500;
       font-size: 28px;
+      cursor: pointer;
     }
-
-    // p {
-    //   font-size: 16px;
-    //   padding: 3px 10px;
-    //   background-color: #d5ddf9;
-    //   font-weight: 500;
-    //   border-radius: 10px;
-    //   margin: 4px 0;
-    //   cursor: pointer;
-    // }
   }
 
   .header__nav {
@@ -41,6 +34,7 @@
 
       .header__nav__list__item {
         margin: 0 30px 20px 0;
+        cursor: pointer;
       }
     }
 
@@ -49,6 +43,7 @@
 
       .header__nav__options__button__wrapper {
         margin: 0 0 20px 30px;
+        cursor: pointer;
       }
     }
   }

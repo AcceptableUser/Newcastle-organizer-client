@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./BoardList.scss";
 import FloatingTaskMenu from "./Subcomponents/floating-task-menu/FloatingTaskMenu";
+import ListAdder from "./Subcomponents/list-adder/ListAdder";
 import TaskAdder from "./Subcomponents/task-adder/TaskAdder";
 import Task from "./Subcomponents/task/Task";
 import TitleList from "./Subcomponents/title-list/TitleList";
@@ -43,13 +44,15 @@ const BoardList = () => {
     },
   ]);
 
+  const [floatMenu, changeFloatMenu] = useState(false);
+
   const handleClick = (e, groupIndex) => {
     let listCopy = [...list];
     listCopy[groupIndex].titleEditable = true;
     changeList(listCopy);
   };
 
-  const changeStyle = (groupIndex) => {
+  const handleTitleEditing = (groupIndex) => {
     if (list[groupIndex].titleEditable) {
       return "title__list--active";
     } else {
@@ -60,7 +63,7 @@ const BoardList = () => {
   const handleKeyPressed = (e, groupIndex) => {
     if (e.key === "Enter") {
       let listCopy = [...list];
-      listCopy[groupIndex].title = e.target.value;
+      listCopy[groupIndex].title = e.target.value.replace(/[\r\n\v]+/g, "");
       listCopy[groupIndex].titleEditable = false;
       changeList(listCopy);
     }
@@ -72,8 +75,33 @@ const BoardList = () => {
     changeList(listCopy);
   };
 
-  const handleFloatingMenu = (params) => {
-    console.log("You have pressed the task!", params);
+  const handleFloatMenuState = () => {
+    if (floatMenu) {
+      return "float-menu__active";
+    } else {
+      return "float-menu__unactive";
+    }
+  };
+
+  const handleTaskClick = () => {
+    changeFloatMenu(true);
+  };
+
+  const handleCloseFloatMenu = () => {
+    changeFloatMenu(false);
+  };
+
+  const handleListCreation = () => {
+    let listCopy = [...list];
+    let newList = {
+      id: listCopy.length,
+      title: "New List",
+      titleEditable: false,
+      items: [],
+    };
+
+    listCopy = [...listCopy, newList];
+    changeList(listCopy);
   };
 
   return (
@@ -84,16 +112,14 @@ const BoardList = () => {
             key={group.title}
             title={group.title}
             handleClick={(e) => handleClick(e, groupIndex)}
-            changeStyle={changeStyle(groupIndex)}
+            handleTitleEditing={handleTitleEditing(groupIndex)}
             handleKeyPressed={(e) => handleKeyPressed(e, groupIndex)}
           />
           {group.items.map((item, itemIndex) => (
             <Task
               key={item}
               item={item}
-              handleFloatingMenu={() =>
-                handleFloatingMenu({ groupIndex, itemIndex })
-              }
+              handleTaskClick={() => handleTaskClick()}
             />
           ))}
           <TaskAdder
@@ -101,9 +127,10 @@ const BoardList = () => {
           />
         </div>
       ))}
-      <div className="floating__menu">
-        <FloatingTaskMenu />
+      <div className={handleFloatMenuState()}>
+        <FloatingTaskMenu handleCloseFloatMenu={() => handleCloseFloatMenu()} />
       </div>
+      <ListAdder handleListCreation={() => handleListCreation()} />
     </div>
   );
 };
