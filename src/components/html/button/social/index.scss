@@ -1,0 +1,16 @@
+@import "src/styles/scss/abstract/variables";
+@import "src/styles/scss/abstract/mixins";
+
+.btn-social{
+  width: 100%;
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  border-radius: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  svg{
+    margin-right: 0.75rem;
+  }
+}

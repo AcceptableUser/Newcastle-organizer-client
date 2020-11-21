@@ -4,7 +4,7 @@ const Close = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       svgjs="http://svgjs.com/svgjs"
       version="1.1"
       width="16"
@@ -13,7 +13,7 @@ const Close = () => {
       y="0"
       viewBox="0 0 47.971 47.971"
       enableBackground="new 0 0 512 512"
-      space="preserve"
+      xmlSpace="preserve"
       class=""
     >
       <g>

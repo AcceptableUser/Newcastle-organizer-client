@@ -3,7 +3,8 @@ import React from "react";
 
 function SignupPage() {
   return (
-    <main className="main">
+    <main className="sign-page">
+        <div/>
         <Signup />
     </main>
   );

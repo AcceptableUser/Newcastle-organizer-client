@@ -5,12 +5,28 @@
   font-family: "Source Sans Pro", "Roboto", sans-serif;
 }
 
-.main {
-  background-color: getColor(primaryColor);
-  background-position: bottom;
+.sign-page {
+  background: url("../assets/images/bg-signin.jpg");
+  background-size: cover;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 1280px){
+  .sign-page{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+a {
+  text-decoration: none;
+}
+
+input{
+  outline: none;
 }

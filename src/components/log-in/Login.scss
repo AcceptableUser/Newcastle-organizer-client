@@ -9,17 +9,24 @@
   margin: auto;
   color: getColor(darkColor);
   .section__login__content__wrapper {
-    padding: 25px 0;
+    padding: 2rem 0;
     .section__login__title__wrapper {
       .section__login__title {
         font-size: 36px;
-        font-weight: 600;
-        margin-bottom: 0;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
       }
 
       .section__login__link {
         font-size: 14px;
         margin-bottom: 30px;
+
+        a {
+          color: getColor(secondaryColor);
+          &:hover{
+            border-bottom: 1px solid getColor(secondaryColor);
+          }
+        }
 
         input {
           border: none;
@@ -42,56 +49,52 @@
       }
 
       input {
-        margin-bottom: 20px;
         border: none;
-        border-bottom: 1px solid getColor(darkColor);
+        //border-bottom: 1px solid getColor(borderColor);
         height: 40px;
         width: 100%;
       }
 
-      .log__button {
-        border: none;
-        background-color: getColor(primaryColor);
-        color: getColor(clearColor);
-        margin-bottom: 30px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-    }
-
-    .log__button__google,
-    .log__button__facebook {
-      height: 40px;
-      width: 100%;
-      border-radius: 0;
-      margin: 10px 0;
-      cursor: pointer;
-      font-weight: 600;
-      border-radius: 5px;
-    }
-
-    .log__button__google {
-      border: 1px solid #d3d3d3;
-    }
-
-    .log__button__facebook {
-      border: none;
-      background-color: getColor(facebookColor);
-      color: getColor(clearColor);
-    }
-
-    .button__font {
-      font-family: "Roboto", sans-serif;
     }
   }
+}
+
+.divide{
+  display: flex;
+  justify-content: center;
+  p{
+    position: relative;
+    /*
+    &::before{
+      background: #eaeaea;
+      content: "";
+      height: 1px;
+      left: 1.5rem;
+      position: absolute;
+      top: 50%;
+      width: 10.5rem;
+    }
+    &::after{
+      background: #eaeaea;
+      content: "";
+      height: 1px;
+      left: 1.5rem;
+      position: absolute;
+      top: 50%;
+      width: 10.5rem;
+      transform: translateX(-12.5rem);
+    }
+     */
+  }
+
 }
 
 @media only screen and (min-width: 766px) {
   .section__login {
-    max-width: 400px;
+    max-width: 500px;
     height: max-content;
     border-radius: 5px;
   }
 }
+
+
