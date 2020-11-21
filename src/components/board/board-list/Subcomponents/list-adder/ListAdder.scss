@@ -1,0 +1,17 @@
+.list__adder__wrapper {
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  .list__adder {
+    width: 280px;
+    height: 35px;
+    padding: 0 20px;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+  }
+}

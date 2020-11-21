@@ -2,7 +2,7 @@ import Board from '../components/board/Board';
 
 function BoardPage() {
   return (
-    <main>
+    <main className="main">
         <Board />
     </main>
   );

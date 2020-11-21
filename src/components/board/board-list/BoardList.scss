@@ -1,18 +1,26 @@
 @import "../../../styles/scss/abstract/variables";
 @import "../../../styles/scss/abstract/mixins";
 
-.list__wrapper {
+.board__list__wrapper {
   display: flex;
   justify-content: left;
-  overflow-x: hidden;
+  width: 100%;
+  height: calc(100vh - 120px);
+  overflow: auto;
+  background-image: url("https://source.unsplash.com/random/1920x1080");
 
-  .list {
-    min-width: 270px;
+  .board__list {
+    min-width: 310px;
     display: block;
     height: max-content;
-    background-color: getColor(listBackground);
-    padding: 5px;
-    border-radius: 5px;
-    margin: 10px 0 10px 10px;
+    margin: 0 0 10px;
   }
+}
+
+.float-menu__unactive {
+  display: none;
+}
+
+.float-menu__active {
+  display: block;
 }

@@ -4,9 +4,9 @@ import React from "react";
 
 function UserPage() {
   return (
-    <div className='user-page'>
+    <nav className='user-page'>
       <Navbar />
-    </div>
+    </nav>
   );
 }
 

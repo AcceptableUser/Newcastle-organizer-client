@@ -1,12 +1,11 @@
-@import '../styles/scss/abstract/variables';
-@import '../styles/scss/abstract/mixins';
+@import "../styles/scss/abstract/variables";
+@import "../styles/scss/abstract/mixins";
 
 .App {
-  font-family: "Source Sans Pro","Roboto", sans-serif;
+  font-family: "Source Sans Pro", "Roboto", sans-serif;
 }
 
-main {
-  //background-image: url(../assets/images/pexels-riccardo-bertolo-4245826.jpg);
+.main {
   background-color: getColor(primaryColor);
   background-position: bottom;
   width: 100%;
