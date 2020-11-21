@@ -6,9 +6,20 @@ import Menu from "../../../../html/SVG/Menu";
 import profile from "../../../../../assets/images/profile.png";
 import "./Task.scss";
 
-const Task = ({ item, handleTaskClick }) => (
-  <div onClick={handleTaskClick} className="task__wrapper">
-    <div className="task__main__wrapper">
+const Task = ({
+  item,
+  handleTaskClick,
+  handleStartDraggingTask,
+  handleDragEnterOnTask,
+  changeTaskStyleOnDrag,
+}) => (
+  <div
+    onClick={handleTaskClick}
+    onDragStart={handleStartDraggingTask}
+    draggable="true"
+    className={changeTaskStyleOnDrag}
+  >
+    <div className="task__main__wrapper" onDragEnter={handleDragEnterOnTask}>
       <div className="task__title__wrapper">
         <h3 className="task__title">{item}</h3>
         <div className="task__options__button__wrapper">

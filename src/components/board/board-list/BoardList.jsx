@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./BoardList.scss";
 import FloatingTaskMenu from "./Subcomponents/floating-task-menu/FloatingTaskMenu";
 import ListAdder from "./Subcomponents/list-adder/ListAdder";
@@ -6,45 +6,13 @@ import TaskAdder from "./Subcomponents/task-adder/TaskAdder";
 import Task from "./Subcomponents/task/Task";
 import TitleList from "./Subcomponents/title-list/TitleList";
 
-const BoardList = () => {
-  const [list, changeList] = useState([
-    {
-      id: "0",
-      title: "To do",
-      titleEditable: false,
-      items: ["Code migration and merge", "JS Hint implementation"],
-    },
-    {
-      id: "1",
-      title: "In progress",
-      titleEditable: false,
-      items: [
-        "Request Costum feedback",
-        "CDD refactoring",
-        "Dashboard improvements",
-      ],
-    },
-    {
-      id: "2",
-      title: "Pending",
-      titleEditable: false,
-      items: ["Request custom feedback"],
-    },
-    {
-      id: "3",
-      title: "Review",
-      titleEditable: false,
-      items: ["Email Newsletter", "Templates translation"],
-    },
-    {
-      id: "4",
-      title: "Finished",
-      titleEditable: false,
-      items: ["Code migration and merge"],
-    },
-  ]);
-
+const BoardList = ({ listData }) => {
+  const [list, changeList] = useState(listData);
   const [floatMenu, changeFloatMenu] = useState(false);
+  const [taskBeenDragger, changeTaskBeenDragger] = useState(false);
+
+  const draggingNode = useRef();
+  const draggingItem = useRef();
 
   const handleClick = (e, groupIndex) => {
     let listCopy = [...list];
@@ -104,10 +72,69 @@ const BoardList = () => {
     changeList(listCopy);
   };
 
+  const handleStartDraggingTask = (e, params) => {
+    draggingNode.current = e.target;
+    draggingItem.current = params;
+    draggingNode.current.addEventListener("dragend", handleEndDraggingTask);
+    setTimeout(() => {
+      changeTaskBeenDragger(true);
+    }, 0);
+  };
+
+  const handleEndDraggingTask = () => {
+    console.log("Not dragged any more");
+    changeTaskBeenDragger(false);
+    draggingNode.current.removeEventListener("dragend", handleEndDraggingTask);
+    draggingNode.current = null;
+    draggingItem.current = null;
+  };
+
+  const changeTaskStyleOnDrag = (params) => {
+    const currentItem = draggingItem.current;
+    if (
+      currentItem.groupIndex === params.groupIndex &&
+      currentItem.itemIndex === params.itemIndex
+    ) {
+      return "task__wrapper--dragged";
+    } else {
+      return "task__wrapper";
+    }
+  };
+
+  const handleDragEnterOnTask = (e, params) => {
+    const currentItem = draggingItem.current;
+    if (
+      draggingItem.current.groupIndex !== params.groupIndex ||
+      draggingItem.current.itemIndex !== params.itemIndex
+    ) {
+      changeList((list) => {
+        let newList = JSON.parse(JSON.stringify(list));
+        newList[params.groupIndex].items.splice(
+          params.itemIndex,
+          0,
+          newList[currentItem.groupIndex].items.splice(
+            currentItem.itemIndex,
+            1
+          )[0]
+        );
+        draggingItem.current = params;
+        return newList;
+      });
+    }
+  };
+
   return (
     <div className="board__list__wrapper">
       {list.map((group, groupIndex) => (
-        <div key={group.id} className="board__list">
+        <div
+          key={group.id}
+          className="board__list"
+          onDragEnter={
+            taskBeenDragger && group.items.length === 0
+              ? (e) => handleDragEnterOnTask(e, { groupIndex, itemIndex: 0 })
+              : null
+          }
+        >
           <TitleList
             key={group.title}
             title={group.title}
@@ -120,6 +147,17 @@ const BoardList = () => {
               key={item}
               item={item}
               handleTaskClick={() => handleTaskClick()}
+              handleStartDraggingTask={(e) =>
+                handleStartDraggingTask(e, { groupIndex, itemIndex })
+              }
+              handleDragEnterOnTask={(e) =>
+                handleDragEnterOnTask(e, { groupIndex, itemIndex })
+              }
+              changeTaskStyleOnDrag={
+                taskBeenDragger
+                  ? changeTaskStyleOnDrag({ groupIndex, itemIndex })
+                  : "task__wrapper"
+              }
             />
           ))}
           <TaskAdder
