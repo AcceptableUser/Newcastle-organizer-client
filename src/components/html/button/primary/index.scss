@@ -1,0 +1,10 @@
+@import "src/styles/scss/abstract/variables";
+@import "src/styles/scss/abstract/mixins";
+
+.btn-primary{
+  background-color: getColor(primaryColor);
+  color: getColor(clearColor);
+  &:hover{
+    background-color: darken(getColor(primaryColor), 20);
+  }
+}

@@ -1,6 +1,9 @@
-*{
+@import "./abstract/variables";
+@import "./abstract/mixins";
+
+* {
   box-sizing: border-box;
-  font-family: "Source Sans Pro","Roboto", sans-serif;
+  font-family: "Source Sans Pro", "Roboto", sans-serif;
 }
 
 body,
@@ -13,13 +16,80 @@ html {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
 .align-items-center {
   align-items: center;
+}
+
+
+.bg-color-transparent {
+  background-color: transparent;
+  outline: none;
+}
+
+.btn {
+  border-radius: 1.25rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  font-family: "Source Sans Pro", sans-serif;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.form-row {
+  display: flex;
+
+  .form-group {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid getColor(borderColor);
+
+  .form-input-icon {
+    display: flex;
+    align-items: center;
+
+    svg {
+      fill: #747474;
+      cursor: pointer;
+
+      &:hover {
+        fill: black
+      }
+    }
+  }
+
+  .form-input {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  }
+
+}
+
+.form-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
 }

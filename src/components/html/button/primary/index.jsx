@@ -1,9 +1,8 @@
 import React from 'react'
+import './index.scss'
 
-export default function index() {
+export default function index({title, type}) {
     return (
-        <div>
-            <input className="log__button button__font" type="button" value="Create account" />
-        </div>
+        <button className="btn btn-primary log__button button__font" type={type}>{title}</button>
     )
 }
