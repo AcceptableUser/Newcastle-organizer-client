@@ -6,12 +6,11 @@
   height: 150px;
   border-radius: 3px;
   background-color: #fdfdfd;
-  cursor: pointer;
-  margin: 12px auto;
   padding: 15px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  margin: 0 auto;
 
   .task__title__wrapper {
     display: flex;
@@ -88,21 +87,5 @@
         height: 26px;
       }
     }
-  }
-}
-
-.task__wrapper--dragged {
-  height: 160px;
-  width: 280px;
-
-  * {
-    background-color: transparent;
-    color: transparent;
-  }
-
-  .task__footer__image,
-  .task__options__button__wrapper,
-  .task__information {
-    display: none;
   }
 }
