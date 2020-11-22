@@ -35,15 +35,16 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
     }
   };
 
-  const handleTaskCreation = (e, listIndex) => {
+  const handleTaskCreation = (listIndex) => {
     let listCopy = [...list];
     let taskCopy = [...task];
     let newTask = {
-      id: taskCopy.length,
+      // It needs to be an string in order to be accepted by react-beautiful-dnd as a draggable
+      id: taskCopy.length.toString(),
       Title: "New Task",
-      Attachments: 0,
-      Comments: 0,
-      DueDate: "None",
+      Attachments: 2,
+      Comments: 6,
+      DueDate: "04/04/2020",
       Labels: "Discovery",
       TeamMembers: "Jhon",
     };
@@ -93,6 +94,7 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
   };
 
   const handleTaskDragEnd = (result) => {
+    console.log(result);
     if (!result.destination) return;
     const listsObjects = [...list];
     const taskToMove = listsObjects[result.source.droppableId].tasks.splice(
@@ -156,10 +158,9 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
                 </div>
               )}
             </Droppable>
-
             <li className="board__list__item">
               <TaskAdder
-                handleTaskCreation={(e) => handleTaskCreation(e, listIndex)}
+                handleTaskCreation={() => handleTaskCreation(listIndex)}
               />
             </li>
           </ul>
