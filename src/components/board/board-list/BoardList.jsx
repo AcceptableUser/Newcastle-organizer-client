@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import "./BoardList.scss";
 import FloatingTaskMenu from "./Subcomponents/floating-task-menu/FloatingTaskMenu";
@@ -11,6 +11,8 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
   const [list, changeList] = useState(listData);
   const [task, changeTask] = useState(taskData);
   const [floatMenu, changeFloatMenu] = useState(FloatMenuData);
+
+  const listItem = useRef();
 
   const handleTaskTitleClick = (e, listIndex) => {
     let listCopy = [...list];
@@ -83,7 +85,7 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
   const handleListCreation = () => {
     let listCopy = [...list];
     let newList = {
-      id: listCopy.length,
+      id: listCopy.length.toString(),
       title: "New List",
       titleEditable: false,
       tasks: [],
@@ -108,6 +110,58 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
     );
   };
 
+  const handleShowingListMenu = (listIndex) => {
+    if (list[listIndex].menuActive) {
+      return "title__list__menu__options--active";
+    } else {
+      return "title__list__menu__options";
+    }
+  };
+
+  const handleActivatingListMenu = (e, listIndex) => {
+    let listCopy = [...list];
+    if (list[listIndex].menuActive) {
+      listCopy[listIndex].menuActive = false;
+      listItem.current = null;
+      changeList(listCopy);
+    } else {
+      listCopy[listIndex].menuActive = true;
+      listItem.current = listIndex;
+      changeList(listCopy);
+    }
+  };
+
+  const handleDeleteList = () => {
+    let listCopy = [...list];
+    listCopy.splice(listItem.current, 1);
+    changeList(listCopy);
+  };
+
+  const handleShowingTaskMenu = (listIndex, taskIndex) => {
+    if (list[listIndex].tasks[taskIndex].menuActive) {
+      return "task__options__button__menu__options--active";
+    } else {
+      return "task__options__button__menu__options";
+    }
+  };
+
+  const handleActivatingTaskMenu = (listIndex, taskIndex) => {
+    let taskCopy = [...task];
+    if (taskCopy[list[listIndex].tasks[taskIndex].id].menuActive) {
+      taskCopy[list[listIndex].tasks[taskIndex].id].menuActive = false;
+    } else {
+      taskCopy[list[listIndex].tasks[taskIndex].id].menuActive = true;
+    }
+    changeTask(taskCopy);
+  };
+
+  const handleDeleteTask = (listIndex, taskIndex) => {
+    let listCopy = [...list];
+
+    listCopy[listIndex].tasks.splice([taskIndex], 1);
+    changeList(listCopy);
+  };
+
   return (
     <div className="board__list__wrapper">
       <DragDropContext onDragEnd={handleTaskDragEnd}>
@@ -119,6 +173,11 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
                 handleTitleEditing={handleTitleEditing(listIndex)}
                 handleTaskTitleClick={(e) => handleTaskTitleClick(e, listIndex)}
                 handleKeyPressed={(e) => handleKeyPressed(e, listIndex)}
+                handleShowingListMenu={handleShowingListMenu(listIndex)}
+                handleActivatingListMenu={(e) =>
+                  handleActivatingListMenu(e, listIndex)
+                }
+                handleDeleteList={() => handleDeleteList()}
               />
             </li>
             <Droppable droppableId={list.id}>
@@ -149,6 +208,16 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
                             taskLabels={task.Labels}
                             taskTeamMembers={task.TeamMembers}
                             handleTaskClick={(e) => handleTaskClick(e, task)}
+                            handleShowingTaskMenu={handleShowingTaskMenu(
+                              listIndex,
+                              taskIndex
+                            )}
+                            handleActivatingTaskMenu={() =>
+                              handleActivatingTaskMenu(listIndex, taskIndex)
+                            }
+                            handleDeleteTask={() =>
+                              handleDeleteTask(listIndex, taskIndex)
+                            }
                           />
                         </li>
                       )}

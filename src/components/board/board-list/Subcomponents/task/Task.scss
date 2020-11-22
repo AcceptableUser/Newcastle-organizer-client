@@ -34,10 +34,35 @@
       padding: 5px 6px;
       border-radius: 3px;
       cursor: pointer;
+      position: relative;
     }
 
     .task__options__button__wrapper:hover {
       background-color: #edf3fa;
+    }
+
+    .task__options__button__menu__options {
+      * {
+        display: none;
+      }
+    }
+
+    .task__options__button__menu__options--active {
+      width: 120px;
+      height: max-content;
+      padding: 10px;
+      border: 1px solid #172b4d;
+      background-color: #fff;
+      position: absolute;
+      border-radius: 5px;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .task__options__button__menu__options__delete {
+        background-color: transparent;
+        cursor: pointer;
+      }
     }
   }
 

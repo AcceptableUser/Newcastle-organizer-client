@@ -14,6 +14,9 @@ const Task = ({
   taskLabels,
   taskTeamMembers,
   handleTaskClick,
+  handleShowingTaskMenu,
+  handleActivatingTaskMenu,
+  handleDeleteTask,
 }) => (
   <div className="task__wrapper">
     <div className="task__main__wrapper">
@@ -21,8 +24,22 @@ const Task = ({
         <h3 onClick={handleTaskClick} className="task__title">
           {taskTitle}
         </h3>
-        <div className="task__options__button__wrapper">
-          <Menu />
+        <div>
+          <div>
+            <div
+              className="task__options__button__wrapper"
+              onClick={handleActivatingTaskMenu}
+            >
+              <Menu />
+            </div>
+            <div className={handleShowingTaskMenu} onClick={handleDeleteTask}>
+              <input
+                className="task__options__button__menu__options__delete"
+                type="button"
+                value="Delete Task"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="task__information__wrapper">
