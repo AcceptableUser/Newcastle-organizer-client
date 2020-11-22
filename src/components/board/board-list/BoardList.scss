@@ -11,9 +11,13 @@
 
   .board__list {
     min-width: 310px;
-    display: block;
     height: max-content;
     margin: 0 0 10px;
+
+    .board__list__item {
+      width: 100%;
+      margin: 0 0 16px;
+    }
   }
 }
 
