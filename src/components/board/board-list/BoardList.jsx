@@ -13,6 +13,9 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
   const [floatMenu, changeFloatMenu] = useState(FloatMenuData);
 
   const listItem = useRef();
+  const listIndexNumber = useRef();
+  const taskIndexNumber = useRef();
+  const floatMenuTitle = useRef();
 
   const handleTaskTitleClick = (e, listIndex) => {
     let listCopy = [...list];
@@ -33,7 +36,30 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
       let listCopy = [...list];
       listCopy[listIndex].title = e.target.value.replace(/[\r\n\v]+/g, "");
       listCopy[listIndex].titleEditable = false;
+      e.preventDefault();
       changeList(listCopy);
+    }
+  };
+
+  const handleTaskTitleChange = (e) => {
+    floatMenuTitle.current = e.target;
+    if (e.key === "Enter") {
+      let taskCopy = [...task];
+      let taskItemId = parseInt(
+        list[listIndexNumber.current].tasks[taskIndexNumber.current].id
+      );
+      taskCopy[taskItemId].Title = e.target.value.replace(/[\r\n\v]+/g, "");
+      changeTask(taskCopy);
+    }
+  };
+
+  const handleTaskDescriptionChange = (e) => {
+    if (e.key === "Enter") {
+      let taskCopy = [...task];
+      let taskItemId =
+        list[listIndexNumber.current].tasks[taskIndexNumber.current].id;
+      taskCopy[taskItemId].Description = e.target.value;
+      changeTask(taskCopy);
     }
   };
 
@@ -61,30 +87,36 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
   };
 
   const handleFloatMenuState = () => {
-    if (floatMenu.isActive) {
+    if (floatMenu[0].isActive) {
       return "float-menu__active";
     } else {
       return "float-menu__unactive";
     }
   };
 
-  const handleTaskClick = (e, task) => {
+  const handleTaskClick = (e, task, listIndex, taskIndex) => {
     let floatMenuCopy = [...floatMenu];
-    floatMenuCopy.title = task.Title;
-    floatMenuCopy.isActive = true;
+    floatMenuCopy[0].title = task.Title;
+    floatMenuCopy[0].description = task.Description;
+    floatMenuCopy[0].isActive = true;
+    listIndexNumber.current = listIndex;
+    taskIndexNumber.current = taskIndex;
     changeFloatMenu(floatMenuCopy);
   };
 
   const handleCloseFloatMenu = () => {
+    // floatMenuTitle.current.value = "";
     let floatMenuCopy = [...floatMenu];
-    floatMenuCopy.title = "";
-    floatMenuCopy.isActive = false;
+    floatMenuCopy[0].isActive = false;
+    listIndexNumber.current = null;
+    taskIndexNumber.current = null;
     changeFloatMenu(floatMenuCopy);
   };
 
   const handleListCreation = () => {
     let listCopy = [...list];
     let newList = {
+      // It needs to be an string in order to be accepted by react-beautiful-dnd as a draggable
       id: listCopy.length.toString(),
       title: "New List",
       titleEditable: false,
@@ -96,7 +128,6 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
   };
 
   const handleTaskDragEnd = (result) => {
-    console.log(result);
     if (!result.destination) return;
     const listsObjects = [...list];
     const taskToMove = listsObjects[result.source.droppableId].tasks.splice(
@@ -147,10 +178,11 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
 
   const handleActivatingTaskMenu = (listIndex, taskIndex) => {
     let taskCopy = [...task];
-    if (taskCopy[list[listIndex].tasks[taskIndex].id].menuActive) {
-      taskCopy[list[listIndex].tasks[taskIndex].id].menuActive = false;
+    let taskItemId = list[listIndex].tasks[taskIndex].id;
+    if (taskCopy[taskItemId].menuActive) {
+      taskCopy[taskItemId].menuActive = false;
     } else {
-      taskCopy[list[listIndex].tasks[taskIndex].id].menuActive = true;
+      taskCopy[taskItemId].menuActive = true;
     }
     changeTask(taskCopy);
   };
@@ -207,7 +239,9 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
                             taskDueDate={task.DueDate}
                             taskLabels={task.Labels}
                             taskTeamMembers={task.TeamMembers}
-                            handleTaskClick={(e) => handleTaskClick(e, task)}
+                            handleTaskClick={(e) =>
+                              handleTaskClick(e, task, listIndex, taskIndex)
+                            }
                             handleShowingTaskMenu={handleShowingTaskMenu(
                               listIndex,
                               taskIndex
@@ -238,13 +272,10 @@ const BoardList = ({ listData, taskData, FloatMenuData }) => {
       <div className={handleFloatMenuState()}>
         <FloatingTaskMenu
           handleCloseFloatMenu={() => handleCloseFloatMenu()}
-          menuTitle={floatMenu.title}
-          menuDescription={floatMenu.description}
-          menuComments={floatMenu.comments}
-          menuMembers={floatMenu.members}
-          menuLabels={floatMenu.labels}
-          menuDueDate={floatMenu.dueDate}
-          menuAttachments={floatMenu.attachments}
+          menuTitle={floatMenu[0].title}
+          menuDescription={floatMenu[0].description}
+          handleTaskTitleChange={(e) => handleTaskTitleChange(e)}
+          handleTaskDescriptionChange={(e) => handleTaskDescriptionChange(e)}
         />
       </div>
       <ListAdder handleListCreation={() => handleListCreation()} />

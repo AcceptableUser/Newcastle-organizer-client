@@ -12,6 +12,8 @@ const FloatingTaskMenu = ({
   menuLabels,
   menuDueDate,
   menuAttachments,
+  handleTaskTitleChange,
+  handleTaskDescriptionChange,
 }) => {
   return (
     <div className="floating-menu__background">
@@ -22,6 +24,7 @@ const FloatingTaskMenu = ({
               defaultValue={menuTitle}
               rows="1"
               className="floating-menu__section__title"
+              onKeyPress={handleTaskTitleChange}
             ></textarea>
             <div
               onClick={handleCloseFloatMenu}
@@ -39,6 +42,8 @@ const FloatingTaskMenu = ({
                 className="floating-menu__section__description"
                 rows="2"
                 placeholder="Add a more detailed description..."
+                defaultValue={menuDescription}
+                onKeyPress={handleTaskDescriptionChange}
               ></textarea>
             </section>
             <section className="floating-menu__section">
