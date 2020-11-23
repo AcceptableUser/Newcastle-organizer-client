@@ -1,5 +1,5 @@
-import React from "react"
-import "./Header.scss"
+import React from "react";
+import "./Header.scss";
 
 const Header = () => {
   return (
@@ -27,7 +27,7 @@ const Header = () => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -3,15 +3,29 @@ import "./FloatingTaskMenu.scss";
 import profile from "../../../../../assets/images/profile.png";
 import Close from "../../../../html/SVG/Close";
 
-const FloatingTaskMenu = ({ handleCloseFloatMenu }) => {
+const FloatingTaskMenu = ({
+  handleCloseFloatMenu,
+  menuTitle,
+  menuDescription,
+  menuComments,
+  menuMembers,
+  menuLabels,
+  menuDueDate,
+  menuAttachments,
+  handleTaskTitleChange,
+  handleTaskDescriptionChange,
+}) => {
   return (
     <div className="floating-menu__background">
       <div className="floating-menu__container">
         <section className="floating-menu__section">
           <div className="floating-menu__section__title__wrapper">
-            <textarea rows="1" className="floating-menu__section__title">
-              Task title
-            </textarea>
+            <textarea
+              defaultValue={menuTitle}
+              rows="1"
+              className="floating-menu__section__title"
+              onKeyPress={handleTaskTitleChange}
+            ></textarea>
             <div
               onClick={handleCloseFloatMenu}
               className="floating-menu__section__close-button__wrapper"
@@ -28,6 +42,8 @@ const FloatingTaskMenu = ({ handleCloseFloatMenu }) => {
                 className="floating-menu__section__description"
                 rows="2"
                 placeholder="Add a more detailed description..."
+                defaultValue={menuDescription}
+                onKeyPress={handleTaskDescriptionChange}
               ></textarea>
             </section>
             <section className="floating-menu__section">
