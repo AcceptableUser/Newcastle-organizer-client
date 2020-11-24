@@ -1,45 +1,56 @@
 import React from "react";
 import "./BoardsList.scss";
-import boardBackground1 from "../../../assets/images/board-background1.jpg";
-import boardBackground2 from "../../../assets/images/board-background2.jpg";
-import boardBackground3 from "../../../assets/images/board-background3.jpg";
-import boardBackground4 from "../../../assets/images/board-background4.jpg";
 
-const BoardsList = ({ listName }) => {
+const BoardsList = ({ listName, number }) => {
   return (
     <div className="boards-list__section__wrapper">
       <section className="boards-list__section">
         <h2 className="boards-list__section__title">{listName}</h2>
-        <ul className="boards-list__section__list">
-          <li className="boards-list__section__list__item">
-            <img
-              className="boards-list__section__list__item__image"
-              src={boardBackground1}
-              alt=""
-            />
-          </li>
-          <li className="boards-list__section__list__item">
-            <img
-              className="boards-list__section__list__item__image"
-              src={boardBackground2}
-              alt=""
-            />
-          </li>
-          <li className="boards-list__section__list__item">
-            <img
-              className="boards-list__section__list__item__image"
-              src={boardBackground3}
-              alt=""
-            />
-          </li>
-          <li className="boards-list__section__list__item">
-            <img
-              className="boards-list__section__list__item__image"
-              src={boardBackground4}
-              alt=""
-            />
-          </li>
-        </ul>
+        <div className="boards-list__section__list__wrapper">
+          <ul className="boards-list__section__list">
+            <li
+              className="boards-list__section__list__item"
+              style={{
+                backgroundImage:
+                  "url(https://source.unsplash.com/350x200/?" +
+                  number * 2 +
+                  ",plant)",
+              }}
+            ></li>
+            <li
+              className="boards-list__section__list__item"
+              style={{
+                backgroundImage:
+                  "url(https://source.unsplash.com/500x400/?" +
+                  number * 5 +
+                  ",plant)",
+              }}
+            ></li>
+            <li
+              className="boards-list__section__list__item"
+              style={{
+                backgroundImage:
+                  "url(https://source.unsplash.com/500x400/?" +
+                  number * 9 +
+                  ",plant)",
+              }}
+            ></li>
+            <li
+              className="boards-list__section__list__item"
+              style={{
+                backgroundImage:
+                  "url(https://source.unsplash.com/500x400/?" +
+                  number * 14 +
+                  ",plant)",
+              }}
+            ></li>
+          </ul>
+          <input
+            className="boards-list__section__list__button"
+            type="button"
+            value="Load more boards"
+          />
+        </div>
       </section>
     </div>
   );

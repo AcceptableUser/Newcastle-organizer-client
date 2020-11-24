@@ -1,28 +1,48 @@
 .boards-list__section__wrapper {
-  display: flex;
+  .boards-list__section__title {
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
 
-  .boards-list__section {
-    .boards-list__section__title {
-      font-size: 20px;
-    }
+  .boards-list__section__list__wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin-bottom: 50px;
 
     .boards-list__section__list {
+      width: 100%;
       display: flex;
+      flex-wrap: wrap;
+      padding: 0 10px;
 
       .boards-list__section__list__item {
-        max-width: 350px;
-        max-height: max-content;
-        border: 1px solid #0000002d;
+        margin: 0 10px 10px 0;
+        width: 350px;
+        height: 200px;
+        flex-grow: 1;
         border-radius: 5px;
-        margin: 20px 15px 60px 0;
         cursor: pointer;
-
-        .boards-list__section__list__item__image {
-          width: 100%;
-          height: auto;
-          border-radius: 5px;
-        }
+        background-image: url("https://source.unsplash.com/1920x1080/?mountain,night");
+        background-size: cover;
+        background-position: center;
       }
+    }
+
+    .boards-list__section__list__button {
+      display: block;
+      margin: 0 20px 0 auto;
+      background-color: #172b4d;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .boards-list__section__list__button:hover {
+      background-color: #172b4dde;
     }
   }
 }

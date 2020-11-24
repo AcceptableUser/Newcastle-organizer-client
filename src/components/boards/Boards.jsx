@@ -2,6 +2,7 @@ import React from "react";
 import BoardsList from "./boards-list/BoardsList";
 import "./Boards.scss";
 import profileGirl from "../../assets/images/profile-girl.png";
+import Loupe from "../html/SVG/Loupe";
 
 const Boards = () => {
   return (
@@ -21,15 +22,21 @@ const Boards = () => {
         </nav>
       </header>
       <main className="boards__main">
+        <div className="boards__main__searchbar">
+          <input className="boards__main__searchbar__input" type="text" />
+          <button className="boards__main__searchbar__button">
+            <Loupe />
+          </button>
+        </div>
         <div className="boards__main__title__wrapper">
           <h1 className="boards__main__title">Here you can see your boards</h1>
           <p className="boards__main__description">
             And also those others shared with you!
           </p>
         </div>
-        <BoardsList listName={"Recently Viewed"} />
-        <BoardsList listName={"Personal Boards"} />
-        <BoardsList listName={"Shared Boards"} />
+        <BoardsList listName={"Recently Viewed"} number={1} />
+        <BoardsList listName={"Personal Boards"} number={5} />
+        <BoardsList listName={"Shared Boards"} number={50} />
       </main>
     </div>
   );
