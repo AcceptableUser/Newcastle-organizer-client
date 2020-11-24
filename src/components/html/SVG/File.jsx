@@ -2,18 +2,18 @@ import React from "react"
 
 const File = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xlink="http://www.w3.org/1999/xlink"
-    svgjs="http://svgjs.com/svgjs"
-    version="1.1"
-    width="14"
-    height="13"
-    x="0"
-    y="0"
-    viewBox="0 0 512 512"
-    enableBackground="new 0 0 512 512"
-    space="preserve"
-    class=""
+      xmlns="http://www.w3.org/2000/svg"
+      xlink="http://www.w3.org/1999/xlink"
+      svgjs="http://svgjs.com/svgjs"
+      version="1.1"
+      width="14"
+      height="13"
+      x="0"
+      y="0"
+      viewBox="0 0 512 512"
+      enableBackground="new 0 0 512 512"
+      space="preserve"
+      className=""
   >
     <g>
     <g xmlns="http://www.w3.org/2000/svg">

@@ -1,0 +1,7 @@
+export const FETCH_PROJECT_LISTS = "project/fetchProjectLists"
+export const CREATE_PROJECT_LIST = "project/createProjectList"
+export const EDIT_PROJECT_LIST = "project/editProjectList"
+export const DELETE_PROJECT_LIST = "project/deleteProjectList"
+export const CREATE_TASK = "project/createTask"
+export const DELETE_TASK = "project/deleteTask"
+export const MOVE_TASK = "project/moveTask"
