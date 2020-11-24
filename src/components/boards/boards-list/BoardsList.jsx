@@ -29,7 +29,7 @@ const BoardsList = () => {
           <input
             className="board-list__section__button"
             type="button"
-            value="See all"
+            value="View all"
           />
         </div>
         <ul className="board-list__section__list">
@@ -53,7 +53,7 @@ const BoardsList = () => {
           <input
             className="board-list__section__button"
             type="button"
-            value="See all"
+            value="View all"
           />
         </div>
         <ul className="board-list__section__list">

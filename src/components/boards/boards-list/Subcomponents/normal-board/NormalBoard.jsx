@@ -3,8 +3,8 @@ import "./NormalBoard.scss";
 
 const NormalBoard = () => {
   return (
-    <div>
-      <h3>Boring project</h3>
+    <div className="normal-board__wrapper">
+      <h3 className="normal-board__title">Boring project</h3>
     </div>
   );
 };
