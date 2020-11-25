@@ -1,11 +1,21 @@
 .boards__wrapper {
+<<<<<<< HEAD
   width: 100%;
   height: 100vh;
+=======
+  min-width: max-content;
+  max-width: 100%;
+  min-height: max-content;
+  max-height: 100%;
+  display: flex;
+  background-color: #f6f7ff;
+>>>>>>> 1b70475bc074628fdc48fcc25b2ff6d34203dbc3
 
   * {
     font-family: "Ubuntu", sans-serif;
     color: #172b4d;
   }
+<<<<<<< HEAD
 
   .boards__header {
     position: fixed;
@@ -59,4 +69,6 @@
       }
     }
   }
+=======
+>>>>>>> 1b70475bc074628fdc48fcc25b2ff6d34203dbc3
 }
