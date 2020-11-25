@@ -15,7 +15,7 @@ const RecentBoard = () => {
         <input
           className="recent-board__button"
           type="button"
-          value="Go to dashboard"
+          value="Open dashboard"
         />
       </div>
     </div>

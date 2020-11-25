@@ -1,13 +1,13 @@
 import React from "react";
 import "./BoardsHeader.scss";
-import BurgerMenu from "../../html/SVG/BurgerMenu.jsx";
+import BoxMenu from "../../html/SVG/BoxMenu.jsx";
 
 const BoardsHeader = () => {
   return (
     <header className="boards-header">
       <nav className="boards-header__nav">
         <div className="boards-header__nav__menu">
-          <BurgerMenu width="30px" height="30px" />
+          <BoxMenu width="32px" height="32px" />
         </div>
         <button className="boards-header__nav__user-button"></button>
       </nav>
