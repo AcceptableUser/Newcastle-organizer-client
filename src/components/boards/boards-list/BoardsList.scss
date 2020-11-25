@@ -1,0 +1,28 @@
+.boards-list__section__wrapper {
+  display: flex;
+
+  .boards-list__section {
+    .boards-list__section__title {
+      font-size: 20px;
+    }
+
+    .boards-list__section__list {
+      display: flex;
+
+      .boards-list__section__list__item {
+        max-width: 350px;
+        max-height: max-content;
+        border: 1px solid #0000002d;
+        border-radius: 5px;
+        margin: 20px 15px 60px 0;
+        cursor: pointer;
+
+        .boards-list__section__list__item__image {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
