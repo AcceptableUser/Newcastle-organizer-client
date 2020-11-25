@@ -1,28 +1,90 @@
-.boards-list__section__wrapper {
-  display: flex;
+.board-list__wrapper {
+  min-width: calc(100% - 80px);
+  max-width: 1600px;
+  height: 100vh;
+  margin: auto;
+  padding: 80px 20px 20px;
+  box-sizing: border-box;
 
-  .boards-list__section {
-    .boards-list__section__title {
-      font-size: 20px;
+  .board-list__title {
+    max-width: inherit;
+    margin: 0 auto 60px;
+  }
+
+  .board-list__important-section {
+    max-width: inherit;
+    margin: auto;
+
+    .board-list__important-section__title {
+      font-size: 22px;
     }
 
-    .boards-list__section__list {
+    .board-list__important-section__list {
       display: flex;
 
-      .boards-list__section__list__item {
-        max-width: 350px;
-        max-height: max-content;
-        border: 1px solid #0000002d;
+      .board-list__important-section__list__item {
+        background-image: url("https://source.unsplash.com/1920x1080/?weekly,water");
         border-radius: 5px;
-        margin: 20px 15px 60px 0;
-        cursor: pointer;
-
-        .boards-list__section__list__item__image {
-          width: 100%;
-          height: auto;
-          border-radius: 5px;
-        }
+        background-size: cover;
       }
+    }
+
+    .board-list__important-section__list li {
+      margin: 15px 15px 0 0;
+    }
+
+    .board-list__important-section__list li:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .board-list__section {
+    max-width: inherit;
+    margin: auto;
+
+    .board-list__section__title__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0 0;
+
+      .board-list__section__title {
+        font-size: 20px;
+      }
+
+      .board-list__section__button {
+        background-color: transparent;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 10px;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      .board-list__section__button:hover {
+        background-color: #172b4d;
+        color: #fff;
+        border-color: #172b4d;
+      }
+    }
+
+    .board-list__section__list {
+      display: flex;
+
+      .board-list__section__list__item {
+        background-image: url("https://source.unsplash.com/1920x1080/?weekly,water");
+        border-radius: 5px;
+        background-size: cover;
+      }
+    }
+
+    .board-list__section__list li {
+      margin: 12.5px 12.5px 0 0;
+    }
+
+    .board-list__section__list li:last-child {
+      margin-right: 0;
     }
   }
 }
