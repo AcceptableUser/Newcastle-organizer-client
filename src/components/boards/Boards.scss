@@ -1,6 +1,8 @@
 .boards__wrapper {
-  width: 100%;
-  height: 100vh;
+  min-width: max-content;
+  max-width: 100%;
+  min-height: max-content;
+  max-height: 100%;
   display: flex;
   background-color: #f6f7ff;
 

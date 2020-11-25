@@ -1,13 +1,12 @@
 .boards-header {
   border-right: 1px solid #172b4d2f;
   width: 80px;
-  height: 100vh;
-  position: fixed;
+  position: relative;
   background-color: #172b4d;
 
   .boards-header__nav {
     width: 80px;
-    height: 100vh;
+    height: 100%;
     padding: 20px 0;
     margin: auto;
     display: flex;

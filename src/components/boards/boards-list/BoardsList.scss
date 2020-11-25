@@ -1,7 +1,9 @@
 .board-list__wrapper {
+  min-width: calc(100% - 80px);
   max-width: 1600px;
+  height: 100vh;
   margin: auto;
-  padding: 40px 20px 20px;
+  padding: 80px 20px 20px;
   box-sizing: border-box;
 
   .board-list__title {
@@ -19,6 +21,12 @@
 
     .board-list__important-section__list {
       display: flex;
+
+      .board-list__important-section__list__item {
+        background-image: url("https://source.unsplash.com/1920x1080/?weekly,water");
+        border-radius: 5px;
+        background-size: cover;
+      }
     }
 
     .board-list__important-section__list li {
@@ -63,6 +71,12 @@
 
     .board-list__section__list {
       display: flex;
+
+      .board-list__section__list__item {
+        background-image: url("https://source.unsplash.com/1920x1080/?weekly,water");
+        border-radius: 5px;
+        background-size: cover;
+      }
     }
 
     .board-list__section__list li {
