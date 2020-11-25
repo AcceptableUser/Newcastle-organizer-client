@@ -1,8 +1,8 @@
 .recent-board__wrapper {
   min-width: 320px;
-  max-width: calc((1200px / 3) - 10px);
+  max-width: calc((1560px / 4) - 10px);
   height: 230px;
-  border: 1px solid #172b4dc0;
+  border: 1px solid #172b4d2f;
   border-radius: 5px;
   padding: 30px;
   display: flex;
@@ -35,10 +35,11 @@
       display: block;
       background-color: transparent;
       cursor: pointer;
-      border: 1px solid grey;
+      border: 1px solid transparent;
       padding: 8px;
       border-radius: 5px;
       transition: 0.3s;
+      font-weight: 500;
     }
 
     .recent-board__button:hover {

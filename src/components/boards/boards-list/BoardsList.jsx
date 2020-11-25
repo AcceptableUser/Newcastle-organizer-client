@@ -21,6 +21,9 @@ const BoardsList = () => {
           <li className="board-list__important-section__list__item">
             <RecentBoard />
           </li>
+          <li className="board-list__important-section__list__item">
+            <RecentBoard />
+          </li>
         </ul>
       </section>
       <section className="board-list__section">
@@ -29,10 +32,13 @@ const BoardsList = () => {
           <input
             className="board-list__section__button"
             type="button"
-            value="View all"
+            value="Create personal board"
           />
         </div>
         <ul className="board-list__section__list">
+          <li className="board-list__section__list__item">
+            <NormalBoard />
+          </li>
           <li className="board-list__section__list__item">
             <NormalBoard />
           </li>
@@ -53,10 +59,13 @@ const BoardsList = () => {
           <input
             className="board-list__section__button"
             type="button"
-            value="View all"
+            value="Create team board"
           />
         </div>
         <ul className="board-list__section__list">
+          <li className="board-list__section__list__item">
+            <NormalBoard />
+          </li>
           <li className="board-list__section__list__item">
             <NormalBoard />
           </li>
