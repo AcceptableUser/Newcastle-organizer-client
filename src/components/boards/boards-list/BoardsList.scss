@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .board-list__wrapper {
   min-width: calc(100% - 80px);
   max-width: 1600px;
@@ -20,8 +21,27 @@
     }
 
     .board-list__important-section__list {
-      display: flex;
+=======
+.boards-list__section__wrapper {
+  .boards-list__section__title {
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
 
+  .boards-list__section__list__wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin-bottom: 50px;
+
+    .boards-list__section__list {
+      width: 100%;
+>>>>>>> Changes in the boards section
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 10px;
+
+<<<<<<< HEAD
       .board-list__important-section__list__item {
         background-image: url("https://source.unsplash.com/1920x1080/?weekly,water");
         border-radius: 5px;
@@ -85,6 +105,35 @@
 
     .board-list__section__list li:last-child {
       margin-right: 0;
+=======
+      .boards-list__section__list__item {
+        margin: 0 10px 10px 0;
+        width: 350px;
+        height: 200px;
+        flex-grow: 1;
+        border-radius: 5px;
+        cursor: pointer;
+        background-image: url("https://source.unsplash.com/1920x1080/?mountain,night");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    .boards-list__section__list__button {
+      display: block;
+      margin: 0 20px 0 auto;
+      background-color: #172b4d;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .boards-list__section__list__button:hover {
+      background-color: #172b4dde;
+>>>>>>> Changes in the boards section
     }
   }
 }
