@@ -9,7 +9,7 @@ import TitleList from "./Subcomponents/title-list/TitleList";
 import {connect} from 'react-redux'
 import {createNewTask, createProjectList, deleteTask, fetchProjectLists, moveTask} from "../../../actions";
 
-const BoardList = ({projectLists, fetchProjectListsProps, createProjectList, createNewTaskProps, moveTaskProps, deleteTaskProps, FloatMenuData}) => {
+const BoardList = ({projectLists, fetchProjectListsProps, createProjectList, createNewTaskProps, moveTaskProps, deleteTaskProps}) => {
 
   const [isTaskPopupOpen, setIsTaskPopupOpen] = useState(false)
 
@@ -81,9 +81,7 @@ const BoardList = ({projectLists, fetchProjectListsProps, createProjectList, cre
 
   const handleTaskDragEnd = (result) => {
     if (!result.destination) return;
-    if (result.source.index === result.destination.index && result.source.draggableId === result.destination.draggableId) {
-      return;
-    }
+
     const listsObjects = [...projectLists];
     const projectListsIndexFrom = listsObjects.findIndex(e => {
       return e.id === +result.source.droppableId
@@ -181,8 +179,7 @@ const BoardList = ({projectLists, fetchProjectListsProps, createProjectList, cre
 
 //Pass project list to props
 const mapStateToProps = (state) => {
-  console.log(state.projectLists)
-  return {projectLists: state.projectLists}
+  return {projectLists: state.currentProject.projectLists}
 }
 
 const mapDispatchToProps = (dispatch) => {

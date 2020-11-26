@@ -1,17 +1,26 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import "./Login.scss"
 import Button from "../html/button/primary"
 import SocialButton from "../html/button/social"
-
-import Input from "../html/form/input"
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 import {colors} from "../../styles/color";
 import Google from "../html/SVG/Google";
 import Facebook from "../html/SVG/Facebook";
 import Invisibility from "../html/SVG/Invisibility";
 import Visibility from "../html/SVG/Visibility";
+import axios from "../../api/server";
+
+const initialUser = {
+    email: '',
+    password: ''
+}
 
 const LogIn = () => {
+
+    const history = useHistory();
+
+    const [user, setUser] = useState(initialUser)
+
 
     //Show password or not
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -21,8 +30,28 @@ const LogIn = () => {
         setPasswordVisible(prevState => !prevState)
     }
 
-    const onSignInFormSubmit = (e) => {
+    useEffect(() => {
+        if (localStorage.getItem('userInfo') && localStorage.getItem('isAuthenticated') && localStorage.getItem('accessToken')) {
+            history.push("/boards");
+        }
+    }, [history])
+
+    const onSignInFormSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const res = await axios.post('/auth/login', user)
+            if (res.status === 200) {
+
+                localStorage.setItem('userInfo', res.data.user)
+                localStorage.setItem('isAuthenticated', 'true')
+                localStorage.setItem('accessToken', res.data.accessToken)
+
+                history.push("/boards");
+            }
+        } catch
+            (e) {
+            console.log(e)
+        }
     }
 
     return (
@@ -35,12 +64,17 @@ const LogIn = () => {
                 <form className="section__login__form" autoComplete="new-password" onSubmit={onSignInFormSubmit}>
                     <div className={"form-group"}>
                         <label className="section__login__form__label" htmlFor="email">Email</label>
-                        <Input type="email" name="email" id="email"/>
+                        <input required type="email" name="email" id="email" value={user.email} onChange={(e) => {
+                            setUser({...user, email: e.target.value})
+                        }}/>
                     </div>
                     <div className={"form-group"}>
                         <label className="section__signup__form__label" htmlFor="password">Password</label>
                         <div className={"form-input-icon"}>
-                            <Input type={passwordVisible ? "text" : "password"} name="password" id="password"/>
+                            <input required type={passwordVisible ? "text" : "password"} name="password" id="password"
+                                   value={user.password} onChange={(e) => {
+                                setUser({...user, password: e.target.value})
+                            }}/>
                             <button onClick={clickToTogglePasswordStatus}
                                     style={{display: `${passwordVisible ? "none" : "block"}`}}
                                     className={"bg-color-transparent"}>
