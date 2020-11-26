@@ -1,5 +1,4 @@
 .recent-board__wrapper {
-  min-width: 320px;
   max-width: calc((1580px / 4) - 10px);
   height: 230px;
   border-radius: 5px;
@@ -8,7 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
   transition: 0.3s;
-  background-color: hsla(0, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.3);
 
   .recent-board__information__wrapper {
     height: 65%;
@@ -55,5 +54,5 @@
 }
 
 .recent-board__wrapper:hover {
-  background-color: hsla(0, 0%, 0%, 0.7);
+  background-color: hsla(0, 0%, 0%, 0.4);
 }

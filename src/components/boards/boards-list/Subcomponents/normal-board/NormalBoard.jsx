@@ -1,10 +1,10 @@
 import React from "react";
 import "./NormalBoard.scss";
 
-const NormalBoard = () => {
+const NormalBoard = ({ boardTitle }) => {
   return (
     <div className="normal-board__wrapper">
-      <h3 className="normal-board__title">Boring project</h3>
+      <h3 className="normal-board__title">{boardTitle}</h3>
     </div>
   );
 };
