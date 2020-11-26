@@ -1,15 +1,12 @@
 import React from "react";
 import "./RecentBoard.scss";
 
-const RecentBoard = () => {
+const RecentBoard = ({ boardTitle, boardDescription }) => {
   return (
     <div className="recent-board__wrapper">
       <div className="recent-board__information__wrapper">
-        <h3 className="recent-board__title">Personal project</h3>
-        <p className="recent-board__description">
-          This project is about creating an illustrated book about a boy and his
-          friends
-        </p>
+        <h3 className="recent-board__title">{boardTitle}</h3>
+        <p className="recent-board__description">{boardDescription}</p>
       </div>
       <div className="recent-board__button__wrapper">
         <input

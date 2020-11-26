@@ -2,8 +2,29 @@ import React from "react";
 import "./BoardsList.scss";
 import NormalBoard from "./Subcomponents/normal-board/NormalBoard";
 import RecentBoard from "./Subcomponents/recent-board/RecentBoard";
+import Carousel from "react-elastic-carousel";
 
-const BoardsList = () => {
+const BoardsList = ({
+  recentlyViewedData,
+  personalBoardsData,
+  teamBoardsData,
+}) => {
+  const breakPointsRecentlyView = [
+    { width: 1, itemsToShow: 1 },
+    { width: 700, itemsToShow: 2 },
+    { width: 1050, itemsToShow: 3 },
+    { width: 1400, itemsToShow: 4 },
+    { width: 1750, itemsToShow: 5 },
+  ];
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 630, itemsToShow: 2 },
+    { width: 930, itemsToShow: 3 },
+    { width: 1240, itemsToShow: 4 },
+    { width: 1550, itemsToShow: 5 },
+  ];
+
   return (
     <div className="board-list__wrapper">
       <h1 className="board-list__title">Welcome back, AcceptableUser!</h1>
@@ -12,18 +33,19 @@ const BoardsList = () => {
           Recently viewed
         </h2>
         <ul className="board-list__important-section__list">
-          <li className="board-list__important-section__list__item">
-            <RecentBoard />
-          </li>
-          <li className="board-list__important-section__list__item">
-            <RecentBoard />
-          </li>
-          <li className="board-list__important-section__list__item">
-            <RecentBoard />
-          </li>
-          <li className="board-list__important-section__list__item">
-            <RecentBoard />
-          </li>
+          <Carousel breakPoints={breakPointsRecentlyView}>
+            {recentlyViewedData.map((recentBoard, recentBoardIndex) => (
+              <li
+                className="board-list__important-section__list__item"
+                key={recentBoardIndex}
+              >
+                <RecentBoard
+                  boardTitle={recentBoard.title}
+                  boardDescription={recentBoard.description}
+                />
+              </li>
+            ))}
+          </Carousel>
         </ul>
       </section>
       <section className="board-list__section">
@@ -32,25 +54,20 @@ const BoardsList = () => {
           <input
             className="board-list__section__button"
             type="button"
-            value="Create personal board"
+            value="Add board"
           />
         </div>
         <ul className="board-list__section__list">
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
+          <Carousel breakPoints={breakPoints}>
+            {personalBoardsData.map((personalBoard, personalBoardIndex) => (
+              <li
+                className="board-list__section__list__item"
+                key={personalBoardIndex}
+              >
+                <NormalBoard boardTitle={personalBoard.title} />
+              </li>
+            ))}
+          </Carousel>
         </ul>
       </section>
       <section className="board-list__section">
@@ -59,25 +76,20 @@ const BoardsList = () => {
           <input
             className="board-list__section__button"
             type="button"
-            value="Create team board"
+            value="Add board"
           />
         </div>
         <ul className="board-list__section__list">
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
-          <li className="board-list__section__list__item">
-            <NormalBoard />
-          </li>
+          <Carousel breakPoints={breakPoints}>
+            {teamBoardsData.map((teamBoard, teamBoardIndex) => (
+              <li
+                className="board-list__section__list__item"
+                key={teamBoardIndex}
+              >
+                <NormalBoard boardTitle={teamBoard.title} />
+              </li>
+            ))}
+          </Carousel>
         </ul>
       </section>
     </div>
