@@ -1,0 +1,66 @@
+.boards-header__nav__user-menu__wrapper {
+  position: absolute;
+  width: 300px;
+  height: max-content;
+  background-color: #fff;
+  border-radius: 3px;
+  top: 60px;
+  right: 15px;
+  padding: 10px;
+  box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25),
+    0 0 0 1px rgba(9, 30, 66, 0.08);
+
+  .boards-header__nav__user-menu__title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    border-bottom: 1px solid #172b4d20;
+    padding-bottom: 5px;
+    color: #172b4d90;
+  }
+
+  .boards-header__nav__user-menu__information__wrapper {
+    display: flex;
+    padding: 5px 0;
+    border-bottom: 1px solid #172b4d20;
+
+    .boards-header__nav__user-menu__image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-image: url("../../../../../assets/images/profile-girl.png");
+      background-size: cover;
+      margin: auto 0;
+    }
+
+    .boards-header__nav__user-menu__data__wrapper {
+      padding: 2px 0 0 5px;
+
+      .boards-header__nav__user-menu__name {
+        font-size: 15px;
+        padding-bottom: 1.5px;
+      }
+
+      .boards-header__nav__user-menu__email {
+        font-size: 14px;
+        color: #172b4d90;
+      }
+    }
+  }
+
+  .boards-header__nav__user-menu__list__item {
+    margin: 10px -10px 0;
+    padding: 5px 12px;
+    font-size: 15px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  .boards-header__nav__user-menu__list__item:hover {
+    background-color: #172b4d10;
+  }
+}
+
+.user-menu__hide {
+  display: none;
+}
