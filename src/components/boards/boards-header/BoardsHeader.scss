@@ -1,9 +1,9 @@
 .boards-header {
-  border-right: 1px solid #172b4d2f;
+  border-bottom: 1px solid #172b4d2f;
   width: 100%;
   height: 70px;
   position: relative;
-  background-color: #172b4d;
+  background-color: #fff;
 
   .boards-header__nav {
     width: 100%;
@@ -14,14 +14,17 @@
     justify-content: space-between;
     align-items: center;
 
-    .boards-header__nav__menu {
+    .boards-header__nav__title {
+      font-family: "Allan", cursive;
+      letter-spacing: 2px;
+      font-size: 28px;
       cursor: pointer;
     }
 
     .boards-header__nav__user-button {
       width: 40px;
       height: 40px;
-      border-radius: 25%;
+      border-radius: 50%;
       background-image: url("../../../assets/images/profile-girl.png");
       background-position: center;
       background-size: cover;

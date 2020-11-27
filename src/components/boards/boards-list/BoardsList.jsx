@@ -8,13 +8,15 @@ const BoardsList = ({
   recentlyViewedData,
   personalBoardsData,
   teamBoardsData,
+  addPersonalBoard,
+  addTeamBoard,
 }) => {
   const breakPointsRecentlyView = [
     { width: 1, itemsToShow: 1 },
-    { width: 700, itemsToShow: 2 },
-    { width: 1050, itemsToShow: 3 },
-    { width: 1400, itemsToShow: 4 },
-    { width: 1750, itemsToShow: 5 },
+    { width: 800, itemsToShow: 2 },
+    { width: 1200, itemsToShow: 3 },
+    { width: 1550, itemsToShow: 4 },
+    { width: 1800, itemsToShow: 5 },
   ];
 
   const breakPoints = [
@@ -55,6 +57,7 @@ const BoardsList = ({
             className="board-list__section__button"
             type="button"
             value="Add board"
+            onClick={addPersonalBoard}
           />
         </div>
         <ul className="board-list__section__list">
@@ -77,6 +80,7 @@ const BoardsList = ({
             className="board-list__section__button"
             type="button"
             value="Add board"
+            onClick={addTeamBoard}
           />
         </div>
         <ul className="board-list__section__list">
