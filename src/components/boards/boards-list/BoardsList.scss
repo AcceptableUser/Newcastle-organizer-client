@@ -21,7 +21,7 @@
     .board-list__important-section__title {
       padding-left: 12px;
       font-size: 22px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       font-weight: 500;
     }
 
@@ -29,7 +29,7 @@
       display: flex;
 
       .board-list__important-section__list__item {
-        background-image: url("https://source.unsplash.com/1920x1080/?weekly,water");
+        background-image: url("https://source.unsplash.com/collection/1111575/1920x1080");
         border-radius: 5px;
         background-size: cover;
       }
@@ -53,10 +53,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 20px 0 10px;
+      margin: 20px 0 0;
 
       .board-list__section__title {
-        font-size: 20px;
+        font-size: 22px;
         padding-left: 12px;
         font-weight: 500;
       }
@@ -83,7 +83,7 @@
       display: flex;
 
       .board-list__section__list__item {
-        background-image: url("https://source.unsplash.com/1920x1080/?weekly,water");
+        background-image: url("https://source.unsplash.com/collection/1111575/1920x1080");
         border-radius: 5px;
         background-size: cover;
         background-position: center;
